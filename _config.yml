@@ -103,37 +103,3 @@ theme: aomori
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
-  
-#Theme Seting
-version: 1654266144177
-language: cn
-aomori_widgets:
-  - toc
-  - category
-  - tag
-  - recent_posts
-  - archive
- aomori_logo_typed_animated: true
- aomori_menu:
-  首页: /
-  关于: /about
-  友链: /friends
-  
- aomori_widgets:
-  - toc # 文章导航
-  - categories  #文章分类
-  - tags # 文章标签
-  - recent_posts  # 最新文章
-  - archive #文章归档
- aomori_disqusjs:
-  enable: true
-  shortname: "noctu"
-  siteName: ""
-  api: "L8dNhdYfskL7wNHr0fCBrdxZhEdvvHh2cyH9kpGJEWsjDaGDlr2HpZp4EyEL0cxx"
-  apikey: "3ptZSdaVDbp92GUdUtV6dgzXQNjfdoRD3wv3sGDQVbBxOFgu1LbDh1sXMB66GxzW"
-  nesting: 4
-  nocomment: "这里冷冷清清的，一条评论都没有"
-  admin: "disqus_a85BDVqBim"
-  adminLabel: ""
- aomori_busuanzi: true
- aomori_favicon: 🌐

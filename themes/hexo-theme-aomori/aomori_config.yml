@@ -29,3 +29,5 @@ aomori_widgets:
   nocomment: "这里冷冷清清的，一条评论都没有"
   admin: "disqus_a85BDVqBim"
   adminLabel: ""
+ aomori_busuanzi: true
+ aomori_favicon: 🌐

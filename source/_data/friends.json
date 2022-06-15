@@ -1,0 +1,14 @@
+[
+    {
+        "category": "分类1",
+        "data": [
+            {
+                "name": "xxx",
+                "url": "https://xxx.com/"
+            },
+            {
+                "name": "xxx",
+                "url": "https://xxx.com/"
+            }
+        ]
+    }

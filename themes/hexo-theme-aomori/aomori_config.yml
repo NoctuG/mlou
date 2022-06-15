@@ -8,15 +8,14 @@ aomori_widgets:
   - archive
  aomori_logo_typed_animated: true
  aomori_menu:
-  Home: /
-  Archives: /archives
-  SmallTalk: /thoughts
-  About: /about
-  Admin: /admin
+  首页: /
+  关于: /about
+  友链: /friends
+  
  aomori_widgets:
   - toc # 文章导航
-  - category  #文章分类
-  - tag # 文章标签
+  - categories  #文章分类
+  - tags # 文章标签
   - recent_posts  # 最新文章
   - archive #文章归档
  aomori_disqusjs:

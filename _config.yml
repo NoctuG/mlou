@@ -1,4 +1,4 @@
-# Hexo Configuration
+## Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: John Doe
-language: cn
+language: zh-CN
 timezone: ''
 
 # URL
@@ -100,6 +100,6 @@ ignore:
 theme: aomori
 
 # Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
+## Docs: https://hexo.io/docs/
 deploy:
   type: ''

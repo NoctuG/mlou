@@ -15,8 +15,8 @@ mdui_version:
 # 主题颜色
 # 颜色列表请看: https://www.mdui.org/docs/color
 color:
-  primary: indigo
-  accent: pink
+  primary: light-blue
+  accent: red
 
 # GPDR Cookie alert(HTML Tag supported)
 # This will show a snackbar at the right bottom of the page
@@ -30,7 +30,7 @@ gdpr_cookie_alert:
   text: 此网站使用Cookie来改善您的体验。
   # 按钮文字
   # Button text
-  ack_btn: Got it
+  ack_btn: 已了解
 
 # Check user's online status
 # If you use Service-Worker, etc. in offline mode, you can still read articles, but cannot comment, etc, then this option will be very useful
@@ -48,7 +48,7 @@ online_check:
   # Online alert text(optional)
   # 网络连接恢复时提示的文字(可选)
   onlineText: 网络连接已恢复！
-  ack_btn: 了解
+  ack_btn: 已解决
 
 # Link to header picture
 header_picture_link: # 头图链接
@@ -72,7 +72,7 @@ search:
   # If you want to use MDx's i18n feature, please leave them blank
   # Search box placeholder text(optional)
   # 搜索框提示文字(可选)
-  placeholder: 搜点什么...
+  placeholder: 您需要找什么...
   # No result text($txt$ will be replaced with the search content)(optional)
   # 无结果时显示的文字($txt$会被替换为搜索的内容)(可选)
   no_result: 没有找到与“$txt$”相关的文章
@@ -87,9 +87,9 @@ drawer_about:
   # Link to avatar image
   avatar: # 头像链接
   # Name
-  name: # 名字
+  name: Jeed # 名字
   # Slogan
-  slogan: # 标语（个性签名）
+  slogan: Go For Better # 标语（个性签名）
   # Link to background image
   background: # 背景图片链接
   # Whether the background is dark-colored or not
@@ -113,7 +113,7 @@ drawer:
 # 文章末尾插入的文段，%title%表示文章标题，%link%表示文章链接
 passage_end_tag:
   enabled: true
-  text: 'END'
+  text: '完'
 
 # Comment system settings
 # 评论系统
@@ -151,7 +151,7 @@ analytics:
 
 footer:
   # When the site was launched
-  since: # 站点开始运营时间
+  since: 2022-6-14 # 站点开始运营时间
   # Show '© %SITE_NAME%' in footer
   copyrights: true # 会在页脚显示 '© %SITE_NAME%'
   # Show "Powered by Hexo" in the footer

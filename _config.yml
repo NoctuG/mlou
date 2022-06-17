@@ -7,7 +7,7 @@ title: Mlou
 subtitle: ''
 description: ''
 keywords:
-author: 
+author: Jeed
 language: zh-CN
 timezone: ''
 
@@ -29,8 +29,6 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
- - admin/*
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -99,9 +97,16 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fluid
+theme: mdx
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+  
+# Search
+search:
+  path: /search.json
+  field: post
+  content: true
+  template: ./search.xml

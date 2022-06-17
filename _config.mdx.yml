@@ -15,7 +15,7 @@ mdui_version:
 # 主题颜色
 # 颜色列表请看: https://www.mdui.org/docs/color
 color:
-  primary: light-blue
+  primary: indigo
   accent: red
 
 # GPDR Cookie alert(HTML Tag supported)
@@ -91,7 +91,7 @@ drawer_about:
   # Slogan
   slogan: Go For Better # 标语（个性签名）
   # Link to background image
-  background: # 背景图片链接
+  background: https://bing.com/th?id=OHR.ClingmansDome_ZH-CN0900594339_1920x1080.jpg # 背景图片链接
   # Whether the background is dark-colored or not
   is_dark: true # 背景图是不是深色的
 

@@ -97,20 +97,9 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: aomori
+theme: volantis
 
 # Deployment
 ## Docs: https://hexo.io/docs/
 deploy:
   type: ''
-  
-# Theme Setup
-version: 1654266144177
-aomori_widgets:
-  - toc
-  - category
-  - tag
-  - recent_posts
-  - archive
-aomori_copyright: true
-aomori_favicon: 🌐

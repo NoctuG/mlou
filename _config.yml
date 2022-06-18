@@ -9,13 +9,12 @@ description: ''
 keywords:
 author: Jeed
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://yoursite.com
-#permalink: :year/:month/:day/:title/
-permalink: post/:abbrlink/
+url: http://example.com
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -29,6 +28,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
+skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -97,74 +97,9 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: mdx
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
-  
-# Search
-search:
-  path: /search.json
-  field: post
-  content: true
-  template: ./search.xml
-  
-# Waline Config File
-# For more information:
-# - https://waline.js.org
-# - https://waline.js.org/reference/component.html
-waline:
-  # New! Whether enable this plugin
-  enable: true
-
-  # Waline server address url, you should set this to your own link
-  serverURL: https://comment-waline-amber.vercel.app/
-
-  # Waline library CDN url, you can set this to your preferred CDN
-  libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js
-
-  # Waline CSS styles CDN url, you can set this to your preferred CDN
-  cssUrl: https://unpkg.com/@waline/client@v2/dist/waline.css
-
-  # Custom locales
-  # locale:
-  #   placeholder: Welcome to comment # Comment box placeholder
-
-  # If false, comment count will only be displayed in post page, not in home page
-  commentCount: true
-
-  # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
-  pageview: false
-
-  # Custom emoji
-  emoji:
-  - https://unpkg.com/@waline/emojis@1.0.1/weibo
-  - https://unpkg.com/@waline/emojis@1.0.1/alus
-  - https://unpkg.com/@waline/emojis@1.0.1/bilibili
-  - https://unpkg.com/@waline/emojis@1.0.1/qq
-  - https://unpkg.com/@waline/emojis@1.0.1/tieba
-  - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
-
-  # Comment infomation, valid meta are nick, mail and link
-  meta:
-  - nick
-  #   - mail
-  #   - link
-
-  # Set required meta field, e.g.: [nick] | [nick, mail]
-  # requiredMeta:
-  #   - nick
-
-  # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
-  lang: zh-CN
-
-  # Word limit, no limit when setting to 0
-  wordLimit: 0
-
-  # Whether enable login, can choose from 'enable', 'disable' and 'force'
-  login: enable
-
-  # comment per page
-  pageSize: 10

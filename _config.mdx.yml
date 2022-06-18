@@ -51,7 +51,7 @@ online_check:
   ack_btn: 已解决
 
 # Link to header picture
-header_picture_link: # 头图链接
+header_picture_link: https://cos-us-west.wtbs.ml/th+(1).jpg # 头图链接
 # Link to favicon.ico
 favicon: # 网站图标链接
 # Auto-generated excerpt length, <!-- more --> is supported
@@ -85,13 +85,13 @@ search:
 drawer_about:
   enable: true
   # Link to avatar image
-  avatar: # 头像链接
+  avatar: https://cos-us-west.wtbs.ml/3-210526154Z0.jpg # 头像链接
   # Name
   name: Jeed # 名字
   # Slogan
   slogan: Go For Better # 标语（个性签名）
   # Link to background image
-  background: https://bing.com/th?id=OHR.ClingmansDome_ZH-CN0900594339_1920x1080.jpg # 背景图片链接
+  background: https://cos-us-west.wtbs.ml/th.jpg # 背景图片链接
   # Whether the background is dark-colored or not
   is_dark: true # 背景图是不是深色的
 
@@ -135,6 +135,32 @@ comment:
     issue_term: 
     lable: 
     theme: 
+  # Cusdis
+  # 基于第三方服务或自托管服务
+  # Based on third-party or self-hosted service
+  # See https://cusdis.com
+  cusdis:
+    host: https://cusdis.com
+    app_id: ba78722b-bf05-4989-883d-688d0e61b81b
+    lang: zh-cn
+
+  # Waline
+  # Docs: https://waline.js.org/
+  waline:
+    serverURL: https://comment-waline-amber.vercel.app/
+    placeholder: Just go go
+    path: window.location.pathname
+    avatar: mp
+    meta: ["nick", "mail", "link"]
+    pageSize: 10
+    visitor: false
+    highlight: true
+    emojiCDN:
+    emojiMaps: null
+    enableQQ: false
+    requiredFields: []
+    anonymous: true
+  
 
 # 网页分析
 analytics:

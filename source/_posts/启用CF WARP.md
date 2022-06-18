@@ -1,7 +1,7 @@
 ---
 title: 启用CF WAR
 tag: Cloudflare
-data: 2022-6-18 16:30:15
+date: 2022-05-07 11:46:56
 ---
 
 # 一、fscarmen 脚本

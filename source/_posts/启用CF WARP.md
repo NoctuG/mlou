@@ -1,3 +1,8 @@
+---
+title: 启用CF WAR
+tag: Cloudflare
+---
+
 # 一、fscarmen 脚本
 
 [Github地址](https://github.com/fscarmen/warp)
@@ -15,6 +20,7 @@ warp o
 ```
 
 · 亮点：可用于优化 Euserv、快速获得免费的 pro 版体验。
+
 
 
 

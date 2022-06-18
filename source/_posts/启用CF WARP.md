@@ -1,6 +1,6 @@
 ---
 title: 启用CF WAR
-tag: Cloudflare
+tags: Cloudflare
 date: 2022-05-07 11:46:56
 ---
 

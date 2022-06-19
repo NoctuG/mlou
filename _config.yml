@@ -59,7 +59,7 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: keep
+theme: mdx
 deploy:
   type: ''
 all_minifier: true

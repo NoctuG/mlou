@@ -59,11 +59,7 @@ pagination_dir: page
 include: null
 exclude: null
 ignore: null
-theme: mdx
+theme: keep
 deploy:
   type: ''
 all_minifier: true
-# Security
-##
-encrypt:
-    enable: true

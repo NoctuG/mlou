@@ -2,10 +2,10 @@ title: Mlou
 subtitle: ''
 description: ''
 keywords: null
-author: John Doe
+author: Jeed
 language: zh-CN
 timezone: 'Asia/Shanghai'
-url: http://example.com
+url: https://mlou.tk
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
@@ -62,3 +62,8 @@ ignore: null
 theme: mdx
 deploy:
   type: ''
+all_minifier: true
+# Security
+##
+encrypt:
+    enable: true

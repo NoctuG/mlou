@@ -168,3 +168,74 @@ footer:
   miit_icp: # 会在页脚显示备案号
   # Link to MOE ICP
   moe_icp: # 会在页脚显示萌备
+
+header_picture_link: https://cdn.yuameshi.top/background-pictures/87489781_p0.3840px.webp
+favicon: /favicon.ico
+excerpt_length: 250
+search:
+  enable: true
+
+# 抽屉菜单的关于
+drawer_about:
+  enable: true
+  avatar: https://cdn.yuameshi.top/background-pictures/Avatar.150px.webp
+  name: Yuameshi
+  slogan: qwq
+  background: https://cdn.yuameshi.top/background-pictures/87478484_p0.1000px.webp
+  is_dark: true
+
+# 抽屉菜单
+# 格式: 名称: 链接 || 前缀(图标)
+# 图标到找 https://www.mdui.org/docs/material_icon
+drawer:
+  主页: / || &#xe88a;
+  睿站主页: https://b23.tv/CRByKN || &#xe04b;
+  基友们: /friends || &#xe7fb;
+  Gay♂Hub: https://github.com/Yuameshi || &#xe869;
+  PhiCommunity: https://phicommunity.com.cn || &#xe149;
+  关于: /about || &#xe88e;
+  Yuameshiの服务状态: https://status.yuameshi.top/ || &#xe24b;
+
+# 文章末尾插入的文段，%title%表示文章标题，%link%表示文章链接
+passage_end_tag:
+  enabled: true
+  text: '本文链接：<a href="%link%">%link%</a><br>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed" target="_blank" rel="noopener">CC BY-NC-SA 3.0</a> 协议进行许可'
+
+comment:
+  use: 'utterances'
+  gitalk:
+    clientID: 
+    clientSecret: 
+    repo: 
+    owner: 
+    admin: ['']
+    distractionFreeMode: true
+  utterances:
+    repo: Yuameshi/MyBlog
+    issue_term: pathname
+    lable: utteranc
+    theme: preferred-color-scheme
+
+
+analytics:
+  google:
+    enabled: false
+    tracking_id: 
+  cloudflare:
+    enabled: false
+    token: 
+
+footer:
+  since: 2019
+  copyrights: true
+  hexo: true
+  theme: true
+  text: 
+  contact:
+    Github: https://github.com/Yuameshi/
+    Email: mailto:yuameshi@outlook.com
+    Twitter: https://twitter.com/Yuameshi
+    Telegram: https://t.me/yuameshi
+    TGChannel: https://t.me/Yuameshi_Words
+  miit_icp: 
+  moe_icp: 20224680

@@ -1,0 +1,20 @@
+name: Push TG Channel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Push:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env: 
+      botToken: ${{ secrets.TG_BOT_TOKEN }}
+    steps:
+      - name: Get Information & Push to Telegram Channel
+        run: |
+          commitMsg=`cat /home/runner/work/_temp/_github_workflow/event.json | jq -r '.commits[0].message'`
+          echo Commit message: $commitMsg
+          commitMsg='Blog有新的提交了，具体内容为：'$commitMsg' \r\n 访问：https://www.yuameshi.top/ 来查看吧！'
+    # curl https://api.telegram.org/bot$botToken/sendMessage -X POST -d 'chat_id=-1001638488826&text='$commitMsg'' && exit 0;

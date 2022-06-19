@@ -99,19 +99,65 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fluid
+theme: mdx
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
 
-#Minifier
-all_minifier: true
 
-#Search
+feed:
+  enable: true
+  type: rss2
+  path: rss.xml
+  limit: 0
+  content: true
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+
 search:
-  path: search.xml
+  path: search.json
   field: post
   content: true
-  template: ./search.xml
+
+all_minifier: true
+
+js_concator:
+  enable: false
+  bundle_path: '/js/bundle.js'
+  front: false
+  silent: false
+
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+  exclude:
+
+css_minifier:
+  enable: true
+  silent: false
+  exclude: 
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  silent: false
+  # output:
+  # compress:
+  exclude: 
+    - '*.min.js'
+
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 3
+  pngquant: false
+  progressive: false
+  silent: false

@@ -1,10 +1,10 @@
 #------------------------
 # Header config
-title: theme-kaze demo
-author: theme-kaze
-logo_img: https://demo.theme-kaze.top/img/Kaze.png # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
-author_img: https://demo.theme-kaze.top/img/Kaze.png
-author_description: designed by theme-kaze
+title: Mlou
+author: Jeed
+logo_img: https://cos-us-west.wtbs.ml/fe0d50b463e74f3ab280de0cf9425b67.png # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
+author_img: https://cos-us-west.wtbs.ml/3-210526154Z0.jpg
+author_description: 人生代代无穷已，江月年年望相似
 #------------------------
 # Navbar config
 #------------------------
@@ -104,8 +104,8 @@ scrollUpAnimation: true
 # comment config
 #------------------------
 comment:
-  enable: false
-  type: valine # valine | gitalk | livere | disqus | we recommend valine | waline
+  enable: true
+  type: waline # valine | gitalk | livere | disqus | we recommend valine | waline
   # gitalk config details can see in https://github.com/gitalk/gitalk/blob/master/readme-cn.md
   # waline config details can see in https://waline.js.org
   valine:
@@ -139,15 +139,15 @@ comment:
   livere:
     uid:
   waline:
-    serverURL:
+    serverURL: https://comment-waline-amber.vercel.app/
     placeholder: Just go go
     path: window.location.pathname
     avatar: mp
     meta: ["nick", "mail", "link"]
     pageSize: 10
-    visitor: false
+    visitor: true
     highlight: true
-    emojiCDN:
+    emojiCDN: https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
     emojiMaps: null
     enableQQ: false
     requiredFields: []
@@ -159,7 +159,7 @@ comment:
 # choose true to use latex by mathjax or katex
 # warning: latex rendering will put lots of loading burden on page loading
 latex:
-  enable: false
+  enable: true
   engine: mathjax # mathjax | katex
   # for better rendering effect, when you choose mathjax, you can use it directly but you will lose some effect
   # so you can use hexo-renderer-kramed
@@ -206,7 +206,7 @@ artitalk:
 # html minify uses html-minifier
 #------------------------
 minify:
-  enable: false
+  enable: true
   css: true
   js: true
   html: true

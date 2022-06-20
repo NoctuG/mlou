@@ -1,10 +1,10 @@
 #------------------------
 # Header config
-title: Mlou
-author: Jeed
+title: theme-kaze demo
+author: theme-kaze
 logo_img: https://demo.theme-kaze.top/img/Kaze.png # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
-author_img: https://cos-us-west.wtbs.ml/3-210526154Z0.jpg
-author_description: 年年岁岁花相似，岁岁年年人不同
+author_img: https://demo.theme-kaze.top/img/Kaze.png
+author_description: designed by theme-kaze
 #------------------------
 # Navbar config
 #------------------------
@@ -139,7 +139,7 @@ comment:
   livere:
     uid:
   waline:
-    serverURL: https://comment-waline-amber.vercel.app/
+    serverURL:
     placeholder: Just go go
     path: window.location.pathname
     avatar: mp
@@ -147,7 +147,7 @@ comment:
     pageSize: 10
     visitor: false
     highlight: true
-    emojiCDN: https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
+    emojiCDN:
     emojiMaps: null
     enableQQ: false
     requiredFields: []

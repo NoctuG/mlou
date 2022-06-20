@@ -147,7 +147,7 @@ comment:
     pageSize: 10
     visitor: false
     highlight: true
-    emojiCDN: https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
+    emojiCDN:
     emojiMaps: null
     enableQQ: false
     requiredFields: []

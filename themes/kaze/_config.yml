@@ -41,7 +41,7 @@ links:
 # Post
 #------------------------
 toc:
-  showListNumber: false
+  showListNumber: true
   maxDepth: 6
   minDepth: 1
 
@@ -145,7 +145,7 @@ comment:
     avatar: mp
     meta: ["nick", "mail", "link"]
     pageSize: 10
-    visitor: true
+    visitor: false
     highlight: true
     emojiCDN: https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
     emojiMaps: null

@@ -139,7 +139,7 @@ comment:
   livere:
     uid:
   waline:
-    serverURL: https://comment-waline-amber.vercel.app/
+    serverURL: 'https://comment-waline-amber.vercel.app/'
     placeholder: Just go go
     path: window.location.pathname
     avatar: mp
@@ -147,10 +147,10 @@ comment:
     pageSize: 10
     visitor: false
     highlight: true
-    emojiCDN:
+    emojiCDN: ['https://unpkg.com/@waline/emojis@1.0.1/tw-emoji']
     emojiMaps: null
     enableQQ: false
-    requiredFields: []
+    requiredFields: ["nick"]
     anonymous: true
 
 #------------------------

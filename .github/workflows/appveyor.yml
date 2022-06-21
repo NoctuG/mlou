@@ -37,7 +37,7 @@ jobs:
 
 environment:
   access_token:
-    secure: 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
+    secure: sB6QKtqlkaIOU8n1jQW6kMa70gnZEnEfOydcHv1cXJTAMRCTo0o35CSsMQ0WXRzI
 
 install:
   - node --version

@@ -7,11 +7,11 @@ tags:
 
 简要说明：基础探针+webssh终端
 
-# 服务端
+# 1.服务端
 
 一键脚本安装
 
-```shell
+``````
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-server-install.sh | bash
 ```
 
@@ -24,7 +24,7 @@ Docker安装
 
 安装记录：
 
-````bash
+````````
 root@iZwz91hhe6wa3igyngrc3jZ:~# wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-server-install.sh | bash
 开始安装nvm
 => Git clone nvm

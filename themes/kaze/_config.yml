@@ -16,7 +16,7 @@ menus:
   categories: /categories
   about: /about
   friends: /links
-  # artitalk: /shuoshuo # You can uncomment to add this route
+  artitalk: /shuoshuo 
 
 about:
   description: description
@@ -69,7 +69,7 @@ og:
 # Footer
 #------------------------
 footer:
-  copyYear: 2020
+  copyYear: 2022
   # if showPoweredBy is ture, 'Powered by Hexo' will be seen on the footer
   showPoweredBy: true
   # if showThemeName is ture, 'Theme - Kaze' will be seen on the footer

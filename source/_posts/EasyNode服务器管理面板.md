@@ -54,7 +54,7 @@ systemctl status easynode-client
 
 查看客户端日志:
 
-`````bash
+```shell
 journalctl --follow -u easynode-client
-``````
+```
 

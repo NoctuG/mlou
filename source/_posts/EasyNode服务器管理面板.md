@@ -13,9 +13,9 @@ GitHub: https://github.com/chaos-zhu/easynode
 
 ## 1.一键脚本安装
 
-```````bash
+````````bash
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-server-install.sh | bash
-`````````````````````````````````````````````````````````
+````````
 
 ## 2.Docker安装
 
@@ -42,6 +42,7 @@ wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubuserconte
 ```shell
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-client-uninstall.sh | bash
 ```
+
 # 3. 使用
 
 访问：localhosyt:22022

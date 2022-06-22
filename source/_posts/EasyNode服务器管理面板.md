@@ -25,7 +25,6 @@ wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubuserconte
 * 停止服务：`pm2 delete easynode-server`
 
 ## 3.安装完成：
-
 访问：localhost:8083  查看
 ![1400069b99a277bce58d239a182c1ba1.jpg](https://ttfou.com/images/2022/06/22/1400069b99a277bce58d239a182c1ba1.jpg)
 

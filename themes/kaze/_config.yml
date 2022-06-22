@@ -139,19 +139,18 @@ comment:
   livere:
     uid:
   waline:
-    serverURL: 'https://comment-waline-amber.vercel.app/'
-    placeholder: Just go go
+    serverURL: https://comment-waline-amber.vercel.app/
     path: window.location.pathname
     avatar: mp
     meta: ["nick", "mail", "link"]
+    requiredMeta: []
+    lang: zh-CN
+    dark: html[data-user-color-scheme="dark"]
+    login: enable
+    wordLimit: 0
     pageSize: 10
-    visitor: false
-    highlight: true
-    emojiCDN: ['https://unpkg.com/@waline/emojis@1.0.1/tw-emoji']
-    emojiMaps: null
-    enableQQ: false
-    requiredFields: ["nick"]
-    anonymous: true
+    locale:
+      placeholder: Just go go
 
 #------------------------
 # latex config

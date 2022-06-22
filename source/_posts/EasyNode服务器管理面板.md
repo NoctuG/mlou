@@ -18,12 +18,9 @@ wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubuserconte
 ````````
 
 ## 2.Docker安装
-
-* 查看日志：`pm2 log easynode-server`
-* 启动服务：`pm2 start easynode-server`
-* 停止服务：`pm2 stop easynode-server`
-* 停止服务：`pm2 delete easynode-server`
-
+````docker
+docker run -d -p 8082:8082 -p 22022:22022 chaoszhu/easynode
+````
 ## 3.安装：
 
 ```shell
@@ -248,21 +245,34 @@ Done in 20.76s.
 访问：localhost:8083  查看
 ![1400069b99a277bce58d239a182c1ba1.jpg](https://ttfou.com/images/2022/06/22/1400069b99a277bce58d239a182c1ba1.jpg)
 
+## 4.日常管理
+对于一键脚本：
+· 查看日志：pm2 log easynode-server
+· 启动服务：pm2 start easynode-server
+· 停止服务：pm2 stop easynode-server
+· 停止服务：pm2 delete easynode-server
+对于docker
+````docker
+docker stop $CONTAINER_ID 
+docker start $CONTAINER_ID
+docker restart $CONTAINER_ID
+docker kill $CONTAINER_ID 
+````
 # 二、客户端
 
-# 1.安装：支持后续一键升级
+## 1.安装：支持后续一键升级
 
 ```shell
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-client-install.sh |bash
 ```
 
-# 2.卸载：无服务残留
+## 2.卸载：无服务残留
 
 ```shell
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-client-uninstall.sh | bash
 ```
 
-# 3. 使用
+## 3. 使用
 
 访问：localhosyt:22022
 查看客户端状态：

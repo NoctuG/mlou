@@ -7,6 +7,8 @@ tags:
 
 简要说明：基础探针+webssh终端
 
+GitHub: https://github.com/chaos-zhu/easynode
+
 # 一、服务端
 
 ## 1.一键脚本安装
@@ -24,21 +26,8 @@ wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubuserconte
 
 ## 3.安装完成：
 
-`````shell
-Done in 20.76s.
-启动服务
-[PM2] Starting /root/easynode-server/app/main.js in fork_mode (1 instance)
-[PM2] Done.
-┌─────┬────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
-│ id  │ name               │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching |
-├─────┼────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
-│ 0   │ easynode-server    │ default     │ 0.0.1   │ fork    │ 30555    │ 0s     │ 0    │ online    │ 0%       │ 19.5mb   │ root     │ disabled │
-└─────┴────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────│
-`````
-
-
+访问：localhost:8083  查看
 ![1400069b99a277bce58d239a182c1ba1.jpg](https://ttfou.com/images/2022/06/22/1400069b99a277bce58d239a182c1ba1.jpg)
-
 
 -----------------------
 
@@ -53,7 +42,6 @@ wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubuserconte
 ```
 
 
-
 # 2.卸载：无服务残留
 
 
@@ -62,12 +50,10 @@ wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubuserconte
 ```
 
 
-# 3. 打开 localhost:2022 查看
+# 3. 使用
 
 
-
-# 4. 使用
-
+访问：localhosyt:22022
 
 查看客户端状态：
 

@@ -196,9 +196,9 @@ analytics:
     id: # you can see more information in https://analytics.google.com/
 # Doc：https://artitalk.js.org/
 artitalk:
-  enable: false
-  appId: 
-  appKey: 
+  enable: true
+  appId: uvEX3NFEgsF9feuobBeTgXnm-MdYXbMMI
+  appKey: 3xQuKkVJdHC8qjQgdEMOaACD
 #------------------------
 # minify config
 # css minify uses autoprefixer and clean-css

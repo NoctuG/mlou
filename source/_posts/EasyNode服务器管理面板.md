@@ -247,10 +247,12 @@ Done in 20.76s.
 
 ## 4.日常管理
 对于一键脚本：
-· 查看日志：pm2 log easynode-server
-· 启动服务：pm2 start easynode-server
-· 停止服务：pm2 stop easynode-server
-· 停止服务：pm2 delete easynode-server
+
+- 查看日志：`pm2 log easynode-server`
+- 启动服务：`pm2 start easynode-server`
+- 停止服务：`pm2 stop easynode-server`
+- 停止服务：`pm2 delete easynode-server`
+
 对于docker
 ````docker
 docker stop $CONTAINER_ID 

@@ -10,10 +10,9 @@ tags:
 # 1.服务端
 
 一键脚本安装
-
-``````
+``````bash
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-server-install.sh | bash
-```
+```````
 
 Docker安装
 

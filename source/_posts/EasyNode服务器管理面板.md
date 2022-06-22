@@ -7,23 +7,24 @@ tags:
 
 简要说明：基础探针+webssh终端
 
-# 1.服务端
+# 一、服务端
 
-一键脚本安装
-``````bash
+## 1.一键脚本安装
+
+```````bash
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-server-install.sh | bash
-```````
+`````````````````````````````````````````````````````````
 
-Docker安装
+## 2.Docker安装
 
 * 查看日志：`pm2 log easynode-server`
 * 启动服务：`pm2 start easynode-server`
 * 停止服务：`pm2 stop easynode-server`
 * 停止服务：`pm2 delete easynode-server`
 
-安装记录：
+## 3.安装记录：
 
-`````bash
+`````shell
 root@iZwz91hhe6wa3igyngrc3jZ:~# wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-server-install.sh | bash
 开始安装nvm
 => Git clone nvm
@@ -251,8 +252,30 @@ Done in 20.76s.
 [PM2] Starting /root/easynode-server/app/main.js in fork_mode (1 instance)
 [PM2] Done.
 ┌─────┬────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
-│ id  │ name               │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+│ id  │ name               │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching |
 ├─────┼────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
 │ 0   │ easynode-server    │ default     │ 0.0.1   │ fork    │ 30555    │ 0s     │ 0    │ online    │ 0%       │ 19.5mb   │ root     │ disabled │
-└─────┴────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴────────
+└─────┴────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────│
 `````
+# 二、客户端
+# 1.安装：支持后续一键升级
+```shell
+wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-client-install.sh | bash
+```
+
+# 2.卸载：无服务残留
+```shell
+wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-client-uninstall.sh | bash
+```
+# 3. 打开 localhost:2022 查看
+
+# 4. 使用
+查看客户端状态：
+`````bash
+systemctl status easynode-client
+`````
+
+查看客户端日志: 
+`````bash
+journalctl --follow -u easynode-client
+``````

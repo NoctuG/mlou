@@ -24,7 +24,7 @@ Docker安装
 
 安装记录：
 
-shell
+````shell
 root@iZwz91hhe6wa3igyngrc3jZ:~# wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-server-install.sh | bash
 开始安装nvm
 => Git clone nvm
@@ -111,7 +111,7 @@ Runtime Edition
 
 
                     -------------
-```
+
 
 [PM2] Spawning PM2 daemon with pm2_home=/root/.pm2
 [PM2] PM2 Successfully daemonized
@@ -254,4 +254,4 @@ Done in 20.76s.
 ├─────┼────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
 │ 0   │ easynode-server    │ default     │ 0.0.1   │ fork    │ 30555    │ 0s     │ 0    │ online    │ 0%       │ 19.5mb   │ root     │ disabled │
 └─────┴────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴────────
-
+``````

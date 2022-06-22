@@ -24,97 +24,9 @@ wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubuserconte
 
 ## 3.安装记录：
 
+
+
 `````shell
-root@iZwz91hhe6wa3igyngrc3jZ:~# wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-server-install.sh | bash
-开始安装nvm
-=> Git clone nvm
-Cloning into '/root/.nvm'...
-remote: Enumerating objects: 8719, done.
-remote: Counting objects: 100% (8719/8719), done.
-remote: Compressing objects: 100% (3038/3038), done.
-remote: Total 8719 (delta 5591), reused 8719 (delta 5591), pack-reused 0
-Receiving objects: 100% (8719/8719), 3.06 MiB | 681.00 KiB/s, done.
-Resolving deltas: 100% (5591/5591), done.
-Note: checking out 'v0.39.1'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-git checkout -b <new-branch-name>
-
-HEAD is now at 9600617... v0.39.1
-=> 添加nvm环境变量(Bash,Zsh)
-=> 使用淘宝镜像
-=> 安装nvm-update,升级更新请使用该命令
-=> 安装完成!
-=> 重启终端后生效
-
-nvm version: 0.39.1
-开始安装node&npm
-Installing latest LTS version.
-Downloading and installing node v16.15.1...
-Downloading https://nodejs.org/dist/v16.15.1/node-v16.15.1-linux-x64.tar.xz...
-######################################################################## 100.0%
-Computing checksum with sha256sum
-Checksums matched!
-Now using node v16.15.1 (npm v8.11.0)
-Creating default alias: default -> lts/* (-> v16.15.1)
-node version: v16.15.1 安装成功
-npm version: 8.11.0 安装成功
-开始安装pm2
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-
-added 182 packages in 15s
-npm notice
-npm notice New minor version of npm available! 8.11.0 -> 8.12.2
-npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.12.2
-npm notice Run npm install -g npm@8.12.2 to update!
-npm notice
-pm2 version:
--------------
-
-__/\\\\\\\\\\\\\____/\\\\____________/\\\\____/\\\\\\\\\_____
-_\/\\\/////////\\\_\/\\\\\\________/\\\\\\__/\\\///////\\\___
-_\/\\\_______\/\\\_\/\\\//\\\____/\\\//\\\_\///______\//\\\__
-_\/\\\\\\\\\\\\\/__\/\\\\///\\\/\\\/_\/\\\___________/\\\/___
-_\/\\\/////////____\/\\\__\///\\\/___\/\\\________/\\\//_____
-_\/\\\_____________\/\\\____\///_____\/\\\_____/\\\//________
-_\/\\\_____________\/\\\_____________\/\\\___/\\\/___________
-_\/\\\_____________\/\\\_____________\/\\\__/\\\\\\\\\\\\\\\_
-_\///______________\///______________\///__\///////////////__
-
-
-
-
-Runtime Edition
-
-    PM2 is a Production Process Manager for Node.js applications
-                 with a built-in Load Balancer.
-
-            Start and Daemonize any application:
-            $ pm2 start app.js
-
-            Load Balance 4 instances of api.js:
-            $ pm2 start api.js -i 4
-
-            Monitor in production:
-            $ pm2 monitor
-
-            Make pm2 auto-boot at server restart:
-            $ pm2 startup
-
-            To go further checkout:
-            http://pm2.io/
-
-
-                    -------------
-
-
 [PM2] Spawning PM2 daemon with pm2_home=/root/.pm2
 [PM2] PM2 Successfully daemonized
 5.2.0 安装成功
@@ -257,29 +169,53 @@ Done in 20.76s.
 │ 0   │ easynode-server    │ default     │ 0.0.1   │ fork    │ 30555    │ 0s     │ 0    │ online    │ 0%       │ 19.5mb   │ root     │ disabled │
 └─────┴────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────│
 `````
+
+
 ![1400069b99a277bce58d239a182c1ba1.jpg](https://ttfou.com/images/2022/06/22/1400069b99a277bce58d239a182c1ba1.jpg)
+
 
 -----------------------
 
 # 二、客户端
+
+
+
+
 # 1.安装：支持后续一键升级
+
+
 ```shell
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-client-install.sh | bash
 ```
 
+
+
 # 2.卸载：无服务残留
+
+
 ```shell
 wget -qO- --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/chaos-zhu/easynode/master/easynode-client-uninstall.sh | bash
 ```
+
+
 # 3. 打开 localhost:2022 查看
 
+
+
 # 4. 使用
+
+
 查看客户端状态：
+
+
 `````bash
 systemctl status easynode-client
 `````
 
 查看客户端日志: 
+
+
+
 `````bash
 journalctl --follow -u easynode-client
 ``````

@@ -12,20 +12,20 @@ categories:
 
 # 一、事前准备
 
-## 1.更新组件
+## 更新组件
 
 ```bash
 apt-get update && apt-get upgrade
 ```
 
-## 2. 安装 Docker
+## 安装 Docker
 
 ```bash
 wget -qO- get.docker.com | bash
 docker -v
 ```
 
-## 3.安装 Dockr-Compose
+## 安装 Dockr-Compose
 
 ```
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -36,7 +36,7 @@ docker-compose --version
 
 # 二、# Dashy 服务器面板
 
-## 1. 项目展示
+## 项目展示
 
 GitHub原项目地址：[https://github.com/Lissy93/dashy](https://github.com/Lissy93/dashy)
 
@@ -46,9 +46,9 @@ Demo地址：[https://demo.dashy.to/](https://demo.dashy.to/)
 
 文档地址：[https://dashy.to/docs/](https://dashy.to/docs/)
 
-## 2.部署
+## 部署
 
-### (1).创建目录与配置文件
+### 创建目录与配置文件
 
 ```bash
 mkdir -p /root/data/docker_data/dashy/ {icons,public}
@@ -56,7 +56,7 @@ cd /root/data/docker_data/dashy
 nano docker-compose.yml
 ```
 
-### (2).编辑配置文件
+### 编辑配置文件
 
 在`docker-compose.yml`中粘贴并保存：
 
@@ -74,7 +74,7 @@ restart: unless-stopped
 image: 'lissy93/dashy:latest'
 ```
 
-### (3).查看端口是否可用
+### 查看端口是否可用
 
 ```bash
 lsof -i:8395
@@ -172,7 +172,7 @@ cd /root/data/docker_data/dashy
 docker-compose up -d
 ```
 
-## 3.更新
+## 更新
 
 ```
 cp -r /root/data/docker_data/dashy /root/data/docker_data/dashy.archive  # 备份数据
@@ -184,20 +184,20 @@ docker-compose up -d   # 重新更新当前镜像
 访问 `IP:8935`即可
 
 
-*可搭配反向代理使用，根据介绍也可以自行添加组件，详见
+* 可搭配反向代理使用，根据介绍也可以自行添加组件，详见
 [官方文档](https://dashy.to/docs/)
 
 
 # 三、Docker版桌面
 
-## 1. 项目展示
+## 项目展示
 
 * GitHub项目地址：[https://github.com/fcwu/docker-ubuntu-vnc-desktop](https://github.com/fcwu/docker-ubuntu-vnc-desktop)
 *  Docker Hub：[https://hub.docker.com/r/imlala/ubuntu-xfce-vnc-novnc](https://hub.docker.com/r/imlala/ubuntu-xfce-vnc-novnc)
 
-## 2.安装部署
+## 安装部署
 
-### (1). 创建目录与配置文件
+### 创建目录与配置文件
 
 ```bash
 mkdir -p /root/data/docker_data/Ubuntu_desktop
@@ -205,7 +205,7 @@ cd /root/data/docker_data/Ubuntu_desktop
 nano docker-compose.yml
 ```
 
-### (2).编辑配置文件
+### 编辑配置文件
 
 在`docker-compose.yml`粘贴并保存：
 
@@ -234,7 +234,7 @@ restart: unless-stopped
 
 安装记录
 
-```
+```bash
 root@1495399293hax:~/data/docker_data/Ubuntu_desktop# docker-compose up -d
 Pulling ubuntu-xfce-vnc (imlala/ubuntu-xfce-vnc-novnc:latest)...
 latest: Pulling from imlala/ubuntu-xfce-vnc-novnc
@@ -251,7 +251,7 @@ Status: Downloaded newer image for imlala/ubuntu-xfce-vnc-novnc:latest
 Creating xfce ... done
 ```
 
-### (3)运行使用
+### 运行使用
 
 ```docker
 docker-compose up -d
@@ -261,17 +261,17 @@ docker-compose up -d
 
 # 四、个人笔记——Trilium
 
-## 1.项目展示
+## 项目展示
 
 * GitHub原项目地址：[https://github.com/zadam/trilium](https://github.com/zadam/trilium)
 * 英文版本客户端下载地址：[https://github.com/zadam/trilium/releases](https://github.com/zadam/trilium/releases)
 * GitHub项目中文版本地址：[https://github.com/Nriver/trilium-translation](https://github.com/Nriver/trilium-translation)
 * 中文版本客户端下载地址：[https://github.com/Nriver/trilium-translation/releases](https://github.com/Nriver/trilium-translation/releases)
-## 2.部署
+## 部署
 
 创建安装目录：
 
-```
+```docker
 mkdir -p /root/data/docker_data/trilium
 cd /root/data/docker_data/trilium
 nano docker-compose.yml
@@ -279,7 +279,7 @@ nano docker-compose.yml
 
 编辑`docker-compose.yml`粘贴并保存：
 
-```
+```docker
 version: '3'
 services:
 trilium-cn:
@@ -304,7 +304,7 @@ docker-compose up -d
 访问 `ip:8080`即可
 安装记录
 
-```
+```bash
 root@5547902421woiden:~/data/docker_data/trilium# docker-compose up -d
 Creating network "trilium_default" with the default driver
 Pulling trilium-cn (nriver/trilium-cn:)...

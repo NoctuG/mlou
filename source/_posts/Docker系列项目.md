@@ -12,13 +12,13 @@ categories:
 
 # 一、事前准备
 
-## 更新组件
+更新组件
 
 ```bash
 apt-get update && apt-get upgrade
 ```
 
-## 安装 Docker
+安装 Docker
 
 ```bash
 wget -qO- get.docker.com | bash

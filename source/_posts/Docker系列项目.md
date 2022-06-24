@@ -2,9 +2,9 @@
 title: Docker系列项目
 date: 2022-06-24 17:44:49
 tags:
-- 开源项目
+- Docker
 categories:
-- VPS
+  - VPS
 ---
 
 程序由 [我不是咕咕鸽](https://blog.laoda.de/)分享得知，记录下其中几个程序的使用

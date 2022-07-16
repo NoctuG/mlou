@@ -51,9 +51,9 @@ online_check:
   ack_btn: 了解
 
 # Link to header picture
-header_picture_link: # 头图链接
+header_picture_link: https://bing.com/th?id=OHR.Arrone_ZH-CN2794175618_1920x1080.jpg # 头图链接
 # Link to favicon.ico
-favicon: # 网站图标链接
+favicon: https://cos-us-west.wtbs.ml/fe0d50b463e74f3ab280de0cf9425b67.png # 网站图标链接
 # Auto-generated excerpt length, <!-- more --> is supported
 excerpt_length: 250 # 自动生成的摘要长度，<!-- more -->也支持
 
@@ -85,7 +85,7 @@ search:
 drawer_about:
   enable: true
   # Link to avatar image
-  avatar: https://cos-us-west.wtbs.ml/fe0d50b463e74f3ab280de0cf9425b67.png # 头像链接
+  avatar:  # 头像链接
   # Name
   name: # 名字
   # Slogan

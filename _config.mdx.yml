@@ -85,13 +85,14 @@ search:
 drawer_about:
   enable: true
   # Link to avatar image
-  avatar:  # 头像链接
+  # 头像链接
+  avatar: https://imgs.totalh.net/i/2022/07/16/w97pbh.jpg
   # Name
-  name: # 名字
+  name: Jeed # 名字
   # Slogan
   slogan: 年年岁岁花相似，岁岁年年人不同 # 标语（个性签名）
   # Link to background image
-  background:  https://cos-us-west.wtbs.ml/3-210526154Z0.jpg # 背景图片链接
+  background: https://cos-us-west.wtbs.ml/3-210526154Z0.jpg # 背景图片链接
   # Whether the background is dark-colored or not
   is_dark: true # 背景图是不是深色的
 

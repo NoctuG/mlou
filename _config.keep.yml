@@ -6,7 +6,7 @@ base_info:
   author: Jeed
   url: https://mlou.eu.org/
   # Logo image (You can use local image, image external link or don’t fill)
-  logo_img: https://cos-us-west.wtbs.ml/fe0d50b463e74f3ab280de0cf9425b67.png
+  logo_img:
 
 # ---------------------------------------------------------------------------------------
 # Theme style settings
@@ -16,7 +16,7 @@ style:
   primary_color: "#0066CC"
 
   # Avatar (You can use local image or image external link)
-  avatar: /images/avatar.svg
+  avatar: https://cos-us-west.wtbs.ml/fe0d50b463e74f3ab280de0cf9425b67.png
 
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg

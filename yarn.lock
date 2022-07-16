@@ -701,7 +701,7 @@
 
 "hexo-theme-keep@^3.4.5":
   "integrity" "sha512-oJ3PUV7dvkIKaCIrxGmDbnesm+sMR0y9F2pwS6Tcen5gz8pJNEhtYHEZEPovw8ct7RAxE+pgYaFfXZGI2bnFbQ=="
-  "resolved" "https://mirrors.cloud.tencent.com/npm/hexo-theme-keep/-/hexo-theme-keep-3.4.5.tgz"
+  "resolved" "https://registry.npmjs.org/hexo-theme-keep/-/hexo-theme-keep-3.4.5.tgz"
   "version" "3.4.5"
 
 "hexo-util@^2.0.0", "hexo-util@^2.5.0", "hexo-util@^2.6.1":

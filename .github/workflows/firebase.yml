@@ -1,2 +1,0 @@
-- name: Deploy Firebase Site
-  uses: danielmillan/pipelines-firebase-hosting@1.0.8

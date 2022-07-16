@@ -2,7 +2,7 @@
 # 主题设置
 # use CDN to boost your site(CDN Providers:true(use jsdelivr)/cdnjs/jsdelivr/staticfile/bootcdn/bytedance/unpkg/false(won't use CDN))
 # 使用CDN加速前端载入(CDN提供商:true(使用默认的jsdelivr)/cdnjs/jsdelivr/staticfile/bootcdn/bytedance/unpkg/false(不使用CDN))
-cdn_provider: 'cdnjs'
+cdn_provider: 'bootcdn'
 
 # 使用特定的MDUI库版本(默认1.0.2，您可以手动修改为其他版本)
 # Use a specific MIUI version(default:1.0.2, you can modify it to other versions manually)
@@ -85,13 +85,13 @@ search:
 drawer_about:
   enable: true
   # Link to avatar image
-  avatar: # 头像链接
+  avatar: https://cos-us-west.wtbs.ml/fe0d50b463e74f3ab280de0cf9425b67.png # 头像链接
   # Name
   name: # 名字
   # Slogan
-  slogan: # 标语（个性签名）
+  slogan: 年年岁岁花相似，岁岁年年人不同 # 标语（个性签名）
   # Link to background image
-  background: # 背景图片链接
+  background:  https://cos-us-west.wtbs.ml/3-210526154Z0.jpg # 背景图片链接
   # Whether the background is dark-colored or not
   is_dark: true # 背景图是不是深色的
 
@@ -104,7 +104,7 @@ drawer_about:
 drawer:
   主页: / || &#xe88a;
   MDx: https://github.com/Yuameshi/hexo-theme-mdx || &#xe243;
-  GitHub: https://github.com/Yuameshi || &#xe149;
+  GitHub: https://github.com/NoctuG || &#xe149;
   关于: /about || &#xe88e;
 
 # Text which will inserted at the end of the article.
@@ -118,7 +118,7 @@ passage_end_tag:
 # Comment system settings
 # 评论系统
 comment:
-  use: 
+  use: utterances
   # gitalk configuration refers to https://github.com/gitalk/gitalk/
   # Gitalk配置文档：https://github.com/gitalk/gitalk/
   gitalk:
@@ -131,10 +131,10 @@ comment:
   # utterance configuration refers to https://utteranc.es/
   # utteranc配置文档：https://utteranc.es/
   utterances:
-    repo: 
-    issue_term: 
-    lable: 
-    theme: 
+    repo: NoctuG/mlou
+    issue_term: pathname
+    lable: 🌐
+    theme: dark-blue
 
 # 网页分析
 analytics:
@@ -151,7 +151,7 @@ analytics:
 
 footer:
   # When the site was launched
-  since: # 站点开始运营时间
+  since: 2022-6-17 # 站点开始运营时间
   # Show '© %SITE_NAME%' in footer
   copyrights: true # 会在页脚显示 '© %SITE_NAME%'
   # Show "Powered by Hexo" in the footer
@@ -163,7 +163,7 @@ footer:
   # Social media links
   contact: # 会在页脚显示链接
     MDx: https://github.com/Yuameshi/hexo-theme-mdx
-    GitHub: https://github.com/Yuameshi
+    GitHub: https://github.com/NoctuG
   # Link to MIIT ICP
   miit_icp: # 会在页脚显示备案号
   # Link to MOE ICP

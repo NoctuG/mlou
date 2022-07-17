@@ -16,8 +16,8 @@ style:
   primary_color: "#0066CC"
 
   # Avatar (You can use local image or image external link)
-  avatar: /images/avatar.svg
-
+  avatar: http://cstgrty.test.upcdn.net/v2-ee4122a636ccfe7d74bec278b8b4d395_1440w.jpg
+  
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg
 
@@ -32,14 +32,14 @@ style:
 
   # Mouse hover
   hover:
-    shadow: false # shadow effect when the mouse hover
-    scale: false # scale effect when the mouse hover
+    shadow: true # shadow effect when the mouse hover
+    scale: true # scale effect when the mouse hover
 
   # First screen
   first_screen:
-    enable: false
-    background_img: /images/bg.svg # You can use local image or image external link
-    description: Keep writing and Keep loving.
+    enable: true
+    background_img: http://cstgrty.test.upcdn.net/VCG211277554839.webp # You can use local image or image external link
+    description: 人生代代无穷已，江月年年望相似
 
   # Scroll style settings
   scroll:

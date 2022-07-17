@@ -16,7 +16,7 @@ style:
   primary_color: "#0066CC"
 
   # Avatar (You can use local image or image external link)
-  avatar: http://cstgrty.test.upcdn.net/v2-ee4122a636ccfe7d74bec278b8b4d395_1440w.jpg
+  avatar: https://tesru.s3.ir-thr-at1.arvanstorage.com/v2-ee4122a636ccfe7d74bec278b8b4d395_1440w.jpg
   
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg

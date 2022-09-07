@@ -181,8 +181,8 @@ comment:
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
   twikoo:
-    env_id: twik-1gtl1l1y03623f7f # Tencent Cloud environment id
-    region: ap-shanghai  # environment region. If select Guangzhou, fill in "ap-guangzhou".
+    env_id: https://twikoo-two-ivory.vercel.app # Tencent Cloud environment id
+   #region:   # environment region. If select Guangzhou, fill in "ap-guangzhou".
 
 # ---------------------------------------------------------------------------------------
 # RSS

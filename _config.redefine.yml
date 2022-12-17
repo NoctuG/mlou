@@ -2,9 +2,9 @@
 #  Your basic info
 # ---------------------------------------------------------------------------------------
 base_info:
-  title: Theme Redefine # Site title
-  author: The Redefine Team # Author name
-  url: https://redefine.evanluo.top # Site url
+  title: Mlou # Site title
+  author: Jeed # Author name
+  url: https://mlou.tk # Site url
   # Logo image (You can use local image, image external link or don’t fill)
   logo_img: # logo image on the left of the navigation bar
 
@@ -16,7 +16,7 @@ style:
   primary_color: "#005080"
 
   # Avatar (You can use local image or image external link)
-  avatar: /images/avatar.svg # avatar of the author
+  avatar: https://tesru.s3.ir-thr-at1.arvanstorage.com/v2-ee4122a636ccfe7d74bec278b8b4d395_1440w.jpg # avatar of the author
 
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg # favicon of the site
@@ -39,14 +39,14 @@ style:
   # Mouse hover
   hover:
     shadow: true # shadow effect when the mouse hover
-    scale: false # scale effect when the mouse hover
+    scale: true # scale effect when the mouse hover
 
   # First screen
   first_screen:
     enable: true
     background_image:
-      light: https://evan.beee.top/img/wallhaven-wqery6-light.webp # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
-      dark: https://evan.beee.top/img/wallhaven-wqery6-dark.webp # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
+      light: https://tesru.s3.ir-thr-at1.arvanstorage.com/background-7071134__480.webp # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
+      dark: https://tesru.s3.ir-thr-at1.arvanstorage.com/background-7071134__480.webp # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
     title_color:
       light: "#fff" # first screen title color (light mode)
       dark: "#d1d1b6" # first screen title color (dark mode)
@@ -57,13 +57,13 @@ style:
     progress_bar: # reading progress bar
       enable: true 
     percent: # reading progress percent
-      enable: false
+      enable: true
 
 # ---------------------------------------------------------------------------------------
 # Social contact link
 # ---------------------------------------------------------------------------------------
 social_contact: # social contact icons in the first screen, you can add more by using fontawesome icon names
-  enable: true
+  enable: false
   links:
     github:  # your GitHub URL
     instagram: # your Instagram URL
@@ -78,6 +78,8 @@ social_contact: # social contact icons in the first screen, you can add more by 
 menu: #you can customize, i18n files are in the theme's languages folder
   Home: /
   Archives: /archives
+  Links: /links
+  Talks: /talks
   # Status: https://status.evanluo.top/
   # About: 
   #   submenus:
@@ -138,7 +140,7 @@ toc:
   enable: true
 
   # Automatically add list number to toc.
-  number: false
+  number: true
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: true
@@ -177,13 +179,13 @@ local_search:
 # Comment plugin
 # ---------------------------------------------------------------------------------------
 comment:
-  enable: false
+  enable: true
   use: waline # values: waline | gitalk | twikoo
 
   # Waline
   # See: https://waline.js.org/guide/get-started.html
   waline:
-    serverUrl:  # Waline server url(vercel) example: https://example.example.com
+    serverUrl: https://waline-mocha-eight.vercel.app/  # Waline server url(vercel) example: https://example.example.com
     lang: zh-CN # Waline language, default: zh-CN. See: https://waline.js.org/guide/client/i18n.html
     dark: auto # Waline dark mode, default: auto. See: https://waline.js.org/reference/component.html#dark
   

@@ -77,9 +77,6 @@ social_contact: # social contact icons in the first screen, you can add more by 
 # ---------------------------------------------------------------------------------------
 menu: #you can customize, i18n files are in the theme's languages folder
   Home: /
-  归档: /archives
-  友链: /links
-  说说: /talks
   # Status: https://status.evanluo.top/
   # About: 
   #   submenus:

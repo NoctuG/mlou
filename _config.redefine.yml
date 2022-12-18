@@ -75,11 +75,13 @@ social_contact: # social contact icons in the first screen, you can add more by 
 # ---------------------------------------------------------------------------------------
 # Navigation menu
 # ---------------------------------------------------------------------------------------
-menu: #you can customize, i18n files are in the theme's languages folder
-  Home: /
-  归档: /archives
-  友链: /links
-  说说: /talks
+menu: #you can customize, i18n files are in the theme's languages folder. fa-regular recommended
+  Home: 
+    path: / 
+    icon: fa-regular fa-house # can be empty
+  Archives: 
+    path: /archives 
+    icon: fa-regular fa-archive # can be empty
   # Status: https://status.evanluo.top/
   # About: 
   #   submenus:

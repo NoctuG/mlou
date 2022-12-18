@@ -224,7 +224,7 @@ lazyload:
 # CDN
 # ---------------------------------------------------------------------------------------
 cdn:
-  enable: true
+  enable: false
 
 # ---------------------------------------------------------------------------------------
 # PJAX
@@ -236,7 +236,7 @@ pjax:
 # Fontawesome
 # ---------------------------------------------------------------------------------------
 fontawesome: # select fontawesome versions you want to use, in order to reduce the loading time, select as few as possible
-  thin: true # use fontawesome thin version or not
+  thin: flase # use fontawesome thin version or not
   light: false # use fontawesome light version or not
   duotone: false # use fontawesome duotone version or not
 
@@ -245,7 +245,7 @@ fontawesome: # select fontawesome versions you want to use, in order to reduce t
 # ---------------------------------------------------------------------------------------
 footer:
   runtime: true # show website running time or not
-  start_time: 2022/7/16 11:45:14 # the starting time of your website, format: yyyy/mm/dd hh:mm:ss
+  start_time: 2022/7/16 16:35:04 # the starting time of your website, format: yyyy/mm/dd hh:mm:ss
   customize:  # customize footer message, can be html code
   icp: # ICP record number of your website, Can be null
 

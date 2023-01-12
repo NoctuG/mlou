@@ -9,8 +9,8 @@ excerpt: 来源：https://github.com/a2nk ```bash ===[[ FREE RDP / XRDP ]]=== (A
 tags:
 - Windows
 - RDP
-title: title
-updated: '2023-01-12 22:07:00'
+title: QEMU Windows RDP
+updated: '2023-01-12 22:27:35'
 ---
 来源：https://github.com/a2nk
 

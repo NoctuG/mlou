@@ -82,6 +82,12 @@ menu: #you can customize, i18n files are in the theme's languages folder. fa-reg
   Archives: 
     path: /archives 
     icon: fa-regular fa-archive # can be empty
+  Links:
+    path: /links
+    icon: fa-regular fa-link
+  Talks:
+    path: /talks
+    icon: fa-regular fa-comment
   # Status: https://status.evanluo.top/
   # About: 
   #   submenus:

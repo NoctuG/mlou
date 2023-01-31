@@ -16,7 +16,7 @@ style:
   primary_color: "#005080"
 
   # Avatar (You can use local image or image external link)
-  avatar: https://tesru.s3.ir-thr-at1.arvanstorage.com/v2-ee4122a636ccfe7d74bec278b8b4d395_1440w.jpg # avatar of the author
+  avatar: https://imgs.gw.to/file/7852b4523b743fbe7aa99.jpg # avatar of the author
 
   # Favicon (You can use local image or image external link)
   favicon: /images/logo.svg # favicon of the site
@@ -45,8 +45,8 @@ style:
   first_screen:
     enable: true
     background_image:
-      light: https://tesru.s3.ir-thr-at1.arvanstorage.com/background-7071134__480.webp # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
-      dark: https://tesru.s3.ir-thr-at1.arvanstorage.com/background-7071134__480.webp # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
+      light: https://imgs.gw.to/file/d7ae7077c9c0f438284f1.jpg # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
+      dark: https://imgs.gw.to/file/d7ae7077c9c0f438284f1.jpg  # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
     title_color:
       light: "#fff" # first screen title color (light mode)
       dark: "#d1d1b6" # first screen title color (dark mode)

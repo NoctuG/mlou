@@ -41,11 +41,12 @@ hexo.extend.helper.register('export_config', function () {
     toc: theme.toc,
     style: theme.style,
     local_search: theme.local_search,
-    code_copy: theme.code_copy,
+    code_block: theme.code_block,
     side_tools: theme.side_tools,
     pjax: theme.pjax,
     lazyload: theme.lazyload,
     version: theme.version,
+    friend_links: theme.friend_links,
   }
 
   return `<script id="hexo-configurations">

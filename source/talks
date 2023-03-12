@@ -1,0 +1,11 @@
+---
+date: 2023-03-12 19:45:59
+excerpt: ' '
+title: talks
+updated: Sun, 12 Mar 2023 11:46:01 GMT
+---
+<script src="https://cdn.jsdelivr.net/npm/qexo-static@1.5.0/hexo/talks.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.5.0/hexo/talks.min.css">
+<div id="qexot"></div>
+<script>showQexoTalks("qexot", "${https://hexo-blog-cms.vercel.app/

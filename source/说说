@@ -10,4 +10,4 @@ updated: Sun, 12 Mar 2023 11:20:42 GMT
 
 <div id="qexot"></div>
 
-<script>showQexoTalks("qexot", "${https://noisy-union-904c.absent.workers.dev/
+<script>showQexoTalks("qexot", "${https://noisy-union-904c.absent.workers.dev}", 5)</script>

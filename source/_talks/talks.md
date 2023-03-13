@@ -10,4 +10,4 @@ updated: Mon, 13 Mar 2023 15:05:51 GMT
 
 <div id="qexot"></div>
 
-<script>showQexoTalks("qexot", "\${https://hexo-blog-cms.vercel.app/
+<script>showQexoTalks("qexot", "\${https://hexo-blog-cms.vercel.app/})

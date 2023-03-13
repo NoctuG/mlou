@@ -86,7 +86,7 @@ menu: #you can customize, i18n files are in the theme's languages folder. fa-reg
   说说:
      path: /talks
      icno: fa-commenting
-  Archives: 
+  归档: 
      path: /archives 
      icon: fa-regular fa-archive # can be empty
   # Status: 

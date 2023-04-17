@@ -696,10 +696,10 @@ hexo-theme-landscape@^0.0.3:
   resolved "https://registry.npmjs.org/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz"
   integrity sha512-b0Di+TUVs4ESrNX4ULEh9uQmADpO6kr10rIJ2OGZM8suNQNFKdxn+vJUjnLfKkCPJAfVmS7/S83KCNYe4tpoNw==
 
-hexo-theme-redefine@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/hexo-theme-redefine/-/hexo-theme-redefine-1.2.3.tgz#8f39144729f5a093a2819cd7116659abb29a58a6"
-  integrity sha512-9C71jAVj5Pk3sX2PVMlAgpzfPaFV4oqoPRuLgEe/5JzT717T4AoLI4v14L8AylKz62cgTmVhHgmrpz0qnbBKaQ==
+hexo-theme-redefine@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/hexo-theme-redefine/-/hexo-theme-redefine-2.1.2.tgz#44c5c13b5dcef1e47ff237c529706d7e25099ee4"
+  integrity sha512-RUXNcIGSu0QijRkwLENBDByrArPlsdQc4scuJxLR/EBFnGDiPx+AZdvgPKJVrIcqRZOn3YB9kHZ/4FTWmJgFTg==
 
 hexo-util@^2.0.0, hexo-util@^2.7.0:
   version "2.7.0"

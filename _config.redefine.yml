@@ -45,8 +45,8 @@ style:
   first_screen:
     enable: true
     background_image:
-      light: https://imgs.gw.to/file/d7ae7077c9c0f438284f1.jpg  # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
-      dark: https://imgs.gw.to/file/7852b4523b743fbe7aa99.jpg   # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
+      light:   # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
+      dark:    # background image of the first screen, use relative path or external link (if your website is in subdirectory, use external link)
     title_color:
       light: "#fff" # first screen title color (light mode)
       dark: "#d1d1b6" # first screen title color (dark mode)
@@ -324,4 +324,4 @@ plugins:
 # Please go to github to update the latest version frequently
 # Github: https://github.com/EvanNotFound/hexo-theme-redefine
 # ---------------------------------------------------------------------------------------
-version: 1.2.3
+version: 2.1.3

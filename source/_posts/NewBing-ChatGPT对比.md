@@ -4,8 +4,8 @@ categories: []
 date: '2023-05-17T20:07:34.791461+08:00'
 excerpt: 请像给出的 shell 命令一样，创造一个可以调用API的HTML单页，让用户看到输入和输出： curl https://api.aiproxy.io/v1/chat/completions \   -H &quot;Content-Type: application/json&quot; \   -H &quot;Authorization: Bearer ap-2eawn4kybIdPIkvC...
 tags: []
-title: title
-updated: 2023-5-17T20:15:28.418+8:0
+title: NewBing-ChatGPT对比
+updated: 2023-5-17T23:18:50.661+8:0
 ---
 请像给出的 shell 命令一样，创造一个可以调用API的HTML单页，让用户看到输入和输出：
 

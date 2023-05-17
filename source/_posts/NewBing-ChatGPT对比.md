@@ -2,18 +2,24 @@
 abbrlink: NBCG
 categories: []
 date: '2023-05-17T20:07:34.791461+08:00'
-excerpt: 请像给出的 shell 命令一样，创造一个可以调用API的HTML单页，让用户看到输入和输出：  curl https://api.aiproxy.io/v1/chat/completions \   -H &quot;Content-Type: application/json&quot; \   -H &quot;Authorization: Bearer ap-2eawn4kybIdPIkv...
+excerpt: 请像给出的 shell 命令一样，创造一个可以调用API的HTML单页，让用户看到输入和输出： curl https://api.aiproxy.io/v1/chat/completions \   -H &quot;Content-Type: application/json&quot; \   -H &quot;Authorization: Bearer ap-2eawn4kybIdPIkvC...
 tags: []
 title: title
-updated: 2023-5-17T20:14:47.584+8:0
+updated: 2023-5-17T20:15:28.418+8:0
 ---
-请像给出的 shell 命令一样，创造一个可以调用API的HTML单页，让用户看到输入和输出：  curl https://api.aiproxy.io/v1/chat/completions \\   -H "Content-Type: application/json" \\   -H "Authorization: Bearer ap-2eawn4kybIdPIkvCfr9oWphHPI8rH6m7q7fCVw8cT5v7TipC" \\   -d '{      "model": "gpt-3.5-turbo",      "messages": [{"role": "user", "content": "你好，很高兴遇见你!"}],      "temperature": 0.7    }' {"model":"gpt-3.5-turbo-0301","object":"chat.completion","usage":{"prompt\_tokens":21,"completion\_tokens":29,"total\_tokens":50},"id":"chatcmpl-7H9tIPcATgNGhdTH216b2FE2OFxtP","created":1684323952,"choices":[{"index":0,"delta":null,"message":{"role":"assistant","content":"你好，我也很高兴遇见你！有什么可以帮助你的吗？"},"finish\_reason":"stop"}]}
+请像给出的 shell 命令一样，创造一个可以调用API的HTML单页，让用户看到输入和输出：
 
-
-
-
-
-
+```bash
+curl https://api.aiproxy.io/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ap-2eawn4kybIdPIkvCfr9oWphHPI8rH6m7q7fCVw8cT5v7TipC" \
+  -d '{
+     "model": "gpt-3.5-turbo",
+     "messages": [{"role": "user", "content": "你好，很高兴遇见你!"}],
+     "temperature": 0.7
+   }'
+{"model":"gpt-3.5-turbo-0301","object":"chat.completion","usage":{"prompt_tokens":21,"completion_tokens":29,"total_tokens":50},"id":"chatcmpl-7H9tIPcATgNGhdTH216b2FE2OFxtP","created":1684323952,"choices":[{"index":0,"delta":null,"message":{"role":"assistant","content":"你好，我也很高兴遇见你！有什么可以帮助你的吗？"},"finish_reason":"stop"}]}
+```
 
 你好，这是Bing。我可以尝试帮助你创造一个HTML单页应用，但是我不能保证它能完美地工作。你需要一些基本的JavaScript和jQuery的知识，以及一些其他的npm包和API。根据搜索结果¹²³，你可以按照以下步骤来创建一个单页应用：
 
@@ -53,7 +59,6 @@ updated: 2023-5-17T20:14:47.584+8:0
 (1) Build a JavaScript Single Page App Without a Framework. https://www.sitepoint.com/single-page-app-without-framework/.
 (2) How to Build A Single Page Application - clockwise.software. https://clockwise.software/blog/single-page-applications-are-they-a-good-choice-for-your-project/.
 (3) Angular - Using Angular routes in a single-page application. https://angular.io/guide/router-tutorial.
-
 
 继续下一步
 
@@ -104,7 +109,6 @@ button {
 ```
 
 继续下一步
-
 
 好的，下一步是在script.js文件中添加以下代码：
 
@@ -221,9 +225,7 @@ $(document).ready(function() {
 });
 ```
 
-
 继续下一步
-
 
 好的，下一步是在templates文件夹中创建以下三个文件：
 
@@ -257,9 +259,7 @@ $(document).ready(function() {
 <button id="go-back">返回</button>
 ```
 
-
 继续下一步
-
 
 好的，下一步是在server.js文件中添加以下代码：
 
@@ -319,8 +319,6 @@ app.listen(port, function() {
 ```
 
 继续下一步
-
-
 
 好的，最后一步是在你的工作目录下，打开终端或命令行，输入以下命令：
 

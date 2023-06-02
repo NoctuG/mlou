@@ -4,10 +4,24 @@ excerpt: ' '
 title: 说说
 updated: Mon, 13 Mar 2023 15:05:51 GMT
 ---
-<script src="https://cdn.jsdelivr.net/npm/qexo-static@1.5.0/hexo/talks.min.js"></script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.5.0/hexo/talks.min.css">
-
-<div id="qexot"></div>
-
-<script>showQexoTalks("qexot", "\${https://hexo-blog-cms.vercel.app/})
+<head>
+  <!-- ... -->
+  <script src="//cdn.jsdelivr.net/gh/Uyoahz26/daodao@main/dist/qexo-dao.min.js"></script>
+  <!-- ... -->
+</head>
+<body>
+  <!-- ... -->
+  <div id="qexoDaoDao"></div>
+  <script>
+    qexoDaodao?.init({
+      el: "#qexoDaoDao",
+      avatar: "https://q1.qlogo.cn/g?b=qq&nk=2496091142&s=640",
+      name: "UyoAhz",
+      limit: 10,
+      useLoadingImg: false,
+      baseURL: "https://hexo-blog-cms.vercel.app/",
+    }).then(function (){
+      console.log("qexoDaodao加载完成");
+    })
+  </script>
+</body>

@@ -1,5 +1,5 @@
 ---
-abbrlink: ''
+abbrlink: vps-bbr
 categories:
 - - VPS
 date: '2023-07-01T14:20:36.774966+08:00'
@@ -7,7 +7,7 @@ excerpt: 介绍 BBR 是一种基于 TCP 的拥塞控制算法，由 Google�
 tags:
 - 技术
 title: 如何在Linux VPS 上安装 BBR
-updated: 2023-7-1T14:33:39.640+8:0
+updated: 2023-7-1T14:33:56.754+8:0
 ---
 ### 介绍
 
@@ -31,7 +31,6 @@ cat /dev/net/tun
 ```bash
 File descriptor in bad state
 ```
-
 
 ### 一、更新系统
 

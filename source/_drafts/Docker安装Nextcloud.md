@@ -33,9 +33,6 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
 
-  redis:
-    image: redis
-    restart: always
 
   app:
     image: nextcloud

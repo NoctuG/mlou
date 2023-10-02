@@ -8,7 +8,7 @@ tags:
 - Linux
 - Termux
 title: Termux安装运行Debian
-updated: '2023-10-02T18:26:58.195+08:00'
+updated: '2023-10-02T18:28:31.031+08:00'
 ---
 1.换源、更新软件源
 
@@ -49,4 +49,12 @@ Dload  Upload   Total   Spent    Left  Speed
 [] Creating file '/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/etc/hosts'...
 [] Registering Android-specific UIDs and GIDs...
 [*] Finished.Now run 'proot-distro login debian' to log in.
+```
+
+
+
+在Termux终端开启VNC：
+
+```text
+vncserver-start
 ```

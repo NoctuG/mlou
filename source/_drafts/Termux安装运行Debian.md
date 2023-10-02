@@ -10,7 +10,7 @@ tags:
 title: Termux安装运行Debian
 updated: /2023-10-02T18:24:42.775+08:00
 ---
-1.更新软件源
+1.换源、更新软件源
 
 ```bash
 sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list

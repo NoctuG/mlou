@@ -3,18 +3,21 @@ abbrlink: termux-debian
 categories:
 - - 技术
 date: '2023-10-02T18:17:11.019944+08:00'
-excerpt: 1.更新软件源 pkg up  2.安装必要依赖 pkg install proot pkg install proot-distro  3.安装Debian系统：  proot-distro install debian  ~ $ proot-distro install debian [] Installing Debian... [] Creating directory '/data/da...
+excerpt: 1.换源、更新软件源 sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list pkg up  2.安装必要依赖 pkg install proot pkg install proot-distro  3.安装Debian系统：  proot-distro install debian  ~ $ proot...
 tags:
 - Linux
 - Termux
 title: Termux安装运行Debian
-updated: '2023-10-02T18:24:42.775+08:00'
+updated: '2023-10-02T18:26:58.195+08:00'
 ---
-1.更新软件源
+1.换源、更新软件源
 
 ```bash
+sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 pkg up
 ```
+
+
 
 2.安装必要依赖
 

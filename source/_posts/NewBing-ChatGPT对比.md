@@ -8,7 +8,7 @@ tags:
 - ChatGPT
 - NewBing
 title: NewBing与ChatGPT对比
-updated: '2023-10-02T17:06:06.456+08:00'
+updated: '2023-10-02T17:06:11.991+08:00'
 ---
 近日,微软推出了一款颠覆性的AI聊天机器人,它集成了新版Bing搜索引擎和ChatGPT模型,引发了人工智能领域的新一轮讨论热潮。我们来比较一下新Bing和ChatGPT,看看两者的优劣如何。
 

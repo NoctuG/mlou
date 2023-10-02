@@ -4,7 +4,7 @@ categories: []
 date: '2023-10-02T18:17:11.019944+08:00'
 tags: []
 title: Termux安装运行Debian
-updated: '2023-10-02T18:17:10.901+08:00'
+updated: '2023-10-02T18:21:56.630+08:00'
 ---
 1.更新软件源
 
@@ -16,4 +16,5 @@ pkg up
 
 ```
 pkg install proot
+pkg install proot-distro
 ```

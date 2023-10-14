@@ -10,11 +10,11 @@
 # BASIC INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 info:
   # Site title
-  title: Mlou
+  title: Theme Redefine
   # Author name
-  author: Jeed
+  author: The Redefine Team
   # Site URL
-  url: https://mlou.xyz
+  url: https://redefine.ohevan.com
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -64,14 +64,15 @@ global:
   scroll_progress:
     bar: false # progress bar
     percentage: true # percentage
-  # Website counter (powered by https://busuanzi.ibruce.info/)
-  busuanzi_counter:
+  # Website counter
+  website_counter:
+    url: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # counter API URL (no need to change)
     enable: true # enable website counter or not
     site_pv: true # site page view
     site_uv: true # site unique visitor
     post_pv: true # post page view
-  # Whether to enable PJAX
-  pjax: true
+  # Whether to enable single page experience (using swup). See https://swup.js.org/. similar to pjax
+  single_page: true
   # Whether to enable open graph
   open_graph: true
   # Google Analytics
@@ -84,7 +85,7 @@ global:
 # FONTAWESOME >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 fontawesome: # Pro v6.2.1
   # Thin version
-  thin: true
+  thin: false
   # Light version
   light: false
   # Duotone version
@@ -99,18 +100,18 @@ home_banner:
   # Whether to enable home banner
   enable: true
   # style of home banner
-  style: static # static or fixed
+  style: fixed # static or fixed
   # Home banner image
   image: 
     light: /images/wallhaven-wqery6-light.webp # light mode
     dark: /images/wallhaven-wqery6-dark.webp # dark mode
   # Home banner title
-  title: LET THINGS GO
+  title: Theme Redefine
   # Home banner subtitle
   subtitle:
     text: [] # subtitle text, array
     hitokoto:  # 一言配置
-      enable: true # Whether to enable hitokoto
+      enable: false # Whether to enable hitokoto
       api: https://v1.hitokoto.cn # API URL, can add types, see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
     typing_speed: 100 # Typing speed (ms)
     backing_speed: 80 # Backing speed (ms)
@@ -150,6 +151,10 @@ home_banner:
       twitter:  # your twitter URL
       email:  # your email
       # ...... # you can add more
+    # Social links with QRcode drawers
+    qrs:
+      weixin:  # your Wechat QRcode image URL
+      # ...... # you can add more
 # HOME BANNER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -167,12 +172,12 @@ navbar:
     Home: 
       path: / 
       icon: fa-regular fa-house # can be empty
-    Archives: 
-      path: /archives 
-      icon: fa-regular fa-archive # can be empty
-    FriendLinks: 
-      path: /links
-      icon: fa-regular fa-chart-bar
+    # Archives: 
+    #   path: /archives 
+    #   icon: fa-regular fa-archive # can be empty
+    # Status: 
+    #   path: https://status.evanluo.top/
+    #   icon: fa-regular fa-chart-bar
     # About: 
     #   icon: fa-regular fa-user
     #   submenus:
@@ -294,7 +299,7 @@ comment:
   config:
     # Waline comment system. See https://waline.js.org/
     waline:
-      serverUrl: https://waline-mocha-eight.vercel.app # Waline server URL. e.g. https://example.example.com
+      serverUrl: https://example.example.com # Waline server URL. e.g. https://example.example.com
       lang: zh-CN # Waline language. e.g. zh-CN, en-US. See https://waline.js.org/guide/client/i18n.html
     # Gitalk comment system. See https://github.com/gitalk/gitalk
     gitalk:
@@ -330,7 +335,7 @@ footer:
   # Icon in footer, write fontawesome icon code here
   icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
   # The start time of the website, format: YYYY/MM/DD HH:mm:ss
-  start: 2022/7/29 11:25:44
+  start: 2022/8/17 11:45:14
   # Footer message
   customize:
   # ICP record number. See https://beian.miit.gov.cn/
@@ -370,10 +375,10 @@ plugins:
         artist: # audio artist
         url: # audio url
         cover: # audio cover url
-      # - name: # audio name
-      #   artist: # audio artist
-      #   url: # audio url
-      #   cover: # audio cover url
+#      - name: # audio name
+#        artist: # audio artist
+#        url: # audio url
+#        cover: # audio cover url
       # .... you can add more audios here
   # Mermaid JS. Requires hexo-filter-mermaid-diagrams (npm i hexo-filter-mermaid-diagrams). See https://mermaid.js.org/
   mermaid:
@@ -394,11 +399,17 @@ page_templates:
 # CDN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 cdn:
   # Whether to enable CDN
-  enable: true
+  enable: false
   # CDN Provider
-  provider: elemecdn # elemecdn, jsdelivr, unpkg, aliyun, custom
+  provider: staticfile # staticfile, bootcdn, cdnjs, jsdelivr, unpkg, custom
   # Custom CDN URL
   # format example: https://cdn.custom.com/hexo-theme-redefine/${version}/source/${path}
   # The ${path} must be in the source folder of the theme
   custom_url: 
 # CDN <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# DEVELOPER MODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+developer:
+  # Whether to enable developer mode (only for developers who want to modify the theme source code, not for ordinary users)
+  enable: false
+# DEVELOPER MODE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end

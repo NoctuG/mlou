@@ -292,14 +292,14 @@ articles:
 # COMMENT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 comment:
   # Whether to enable comment
-  enable: flase
+  enable: true
   # Comment system
   system: waline # waline, gitalk, twikoo, giscus
   # System configuration
   config:
     # Waline comment system. See https://waline.js.org/
     waline:
-      serverUrl: https://waline-mocha-eight.vercel.app # Waline server URL. e.g. https://example.example.com
+      serverUrl: https://waline-1-p3250854.deta.app # Waline server URL. e.g. https://example.example.com
       lang: zh-CN # Waline language. e.g. zh-CN, en-US. See https://waline.js.org/guide/client/i18n.html
     # Gitalk comment system. See https://github.com/gitalk/gitalk
     gitalk:
@@ -401,7 +401,7 @@ cdn:
   # Whether to enable CDN
   enable: true
   # CDN Provider
-  provider: bootcdn # staticfile, bootcdn, cdnjs, jsdelivr, unpkg, custom
+  provider:staticfile # staticfile, bootcdn, cdnjs, jsdelivr, unpkg, custom
   # Custom CDN URL
   # format example: https://cdn.custom.com/hexo-theme-redefine/${version}/source/${path}
   # The ${path} must be in the source folder of the theme

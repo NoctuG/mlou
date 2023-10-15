@@ -32,9 +32,9 @@ defaults:
 # COLORS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 colors:
   #Primary color
-  primary: "#A31F34"
+  primary: "3D85C6"
   # Secondary color (beta)
-  secondary: 
+  secondary: "D9EAD3"
 # COLORS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -62,7 +62,7 @@ global:
     scale: false # scale effect
   # Scroll progress
   scroll_progress:
-    bar: false # progress bar
+    bar: true # progress bar
     percentage: true # percentage
   # Website counter
   website_counter:
@@ -292,7 +292,7 @@ articles:
 # COMMENT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 comment:
   # Whether to enable comment
-  enable: true
+  enable: flase
   # Comment system
   system: waline # waline, gitalk, twikoo, giscus
   # System configuration
@@ -335,7 +335,7 @@ footer:
   # Icon in footer, write fontawesome icon code here
   icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
   # The start time of the website, format: YYYY/MM/DD HH:mm:ss
-  start: 2022/8/17 11:45:14
+  start: 2022/8/17 12:26:14
   # Footer message
   customize:
   # ICP record number. See https://beian.miit.gov.cn/
@@ -392,16 +392,16 @@ page_templates:
   # Friend Links page column number
   friends_column: 2
   # Tags page style
-  tags_style: blur # blur, cloud
+  tags_style: cloud # blur, cloud
 # PAGE TEMPLATES <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
 # CDN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 cdn:
   # Whether to enable CDN
-  enable: false
+  enable: true
   # CDN Provider
-  provider: staticfile # staticfile, bootcdn, cdnjs, jsdelivr, unpkg, custom
+  provider: bootcdn # staticfile, bootcdn, cdnjs, jsdelivr, unpkg, custom
   # Custom CDN URL
   # format example: https://cdn.custom.com/hexo-theme-redefine/${version}/source/${path}
   # The ${path} must be in the source folder of the theme

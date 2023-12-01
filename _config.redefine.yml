@@ -298,6 +298,6 @@ comment:
   # System configuration
   config:
     # Waline comment system. See https://waline.js.org/
-    waline:
-      serverUrl:https://waline-1-p3250854.deta.app # Waline server URL. e.g. https://example.example.com
-      lang: zh-CN # Waline language. e.g. zh-CN, en-US. See https://waline.js.org
+  waline:
+     serverUrl: https://waline-1-p325 ...
+     lang: zh-CN # Waline language.  ...

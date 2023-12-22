@@ -10,11 +10,11 @@
 # BASIC INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 info:
   # Site title
-  title: Theme Redefine
+  title: Mlou
   # Author name
-  author: The Redefine Team
+  author: Jeed
   # Site URL
-  url: https://redefine.ohevan.com
+  url: https://mlou.xyz
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -85,7 +85,7 @@ global:
 # FONTAWESOME >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 fontawesome: # Pro v6.2.1
   # Thin version
-  thin: false
+  thin: true
   # Light version
   light: false
   # Duotone version
@@ -111,7 +111,7 @@ home_banner:
   subtitle:
     text: [] # subtitle text, array
     hitokoto:  # 一言配置
-      enable: false # Whether to enable hitokoto
+      enable: true# Whether to enable hitokoto
       api: https://v1.hitokoto.cn # API URL, can add types, see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
     typing_speed: 100 # Typing speed (ms)
     backing_speed: 80 # Backing speed (ms)
@@ -172,12 +172,12 @@ navbar:
     Home: 
       path: / 
       icon: fa-regular fa-house # can be empty
-    # Archives: 
-    #   path: /archives 
-    #   icon: fa-regular fa-archive # can be empty
-    # Status: 
-    #   path: https://status.evanluo.top/
-    #   icon: fa-regular fa-chart-bar
+    Archives: 
+      path: /archives 
+      icon: fa-regular fa-archive # can be empty
+    Status: 
+      path: https://servers.10789432.xyz
+      icon: fa-regular fa-chart-bar
     # About: 
     #   icon: fa-regular fa-user
     #   submenus:
@@ -302,7 +302,7 @@ comment:
   config:
     # Waline comment system. See https://waline.js.org/
     waline:
-      serverUrl: https://example.example.com # Waline server URL. e.g. https://example.example.com
+      serverUrl: https://waline-1-p3250854.deta.app # Waline server URL. e.g. https://example.example.com
       lang: zh-CN # Waline language. e.g. zh-CN, en-US. See https://waline.js.org/guide/client/i18n.html
     # Gitalk comment system. See https://github.com/gitalk/gitalk
     gitalk:

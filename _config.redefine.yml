@@ -178,6 +178,9 @@ navbar:
     Status: 
       path: https://servers.10789432.xyz
       icon: fa-regular fa-chart-bar
+    Friend Links:
+      path: /links
+      icon: fa-duotone fa-user-group
     # About: 
     #   icon: fa-regular fa-user
     #   submenus:

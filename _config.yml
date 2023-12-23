@@ -105,7 +105,7 @@ deploy:
   type: ''
 
 # Link
-permalink: 'archives/:abbrlink/'
+permalink: 'archives/:abbrlink...'
 ## abbrlink 配置
 abbrlink:
   alg: crc32      # 算法--支持 crc16(默认) 和 crc32

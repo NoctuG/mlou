@@ -14,7 +14,6 @@ timezone: 'Asia/Shanghai'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://mlou.xyz
-permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -105,8 +104,7 @@ deploy:
   type: ''
 
 # Link
-permalink: posts/:abbrlink/ 
-## abbrlink 配置
+permalink: posts/:abbrlink.html
 abbrlink:
   alg: crc32      # 算法--支持 crc16(默认) 和 crc32
   rep: hex        # 进制--支持 dec(默认/十进制) and hex(十六进制)

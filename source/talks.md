@@ -1,12 +1,12 @@
 ---
-date: 2023-03-13 23:05:50
-excerpt: ' '
+date: '2023-03-13T23:05:50+08:00'
+excerpt: 这篇文章介绍了摘要生成工具的功能和用途。它解释了该工具的任务是根据给定的文本生成简洁而全面的摘要，而不是进行续写。它还提到了如何避免换行并限制摘要长度在150个字以内。文章强调了该工具只介绍文章内容，而不会提供建议或指出文章缺少什么。
 title: 说说
-updated: Mon, 13 Mar 2023 15:05:51 GMT
+updated: '2023-12-24T01:03:48.456+08:00'
 ---
 <head>
   <!-- ... -->
-  <script src="//cdn.jsdelivr.net/gh/Uyoahz26/daodao@main/dist/qexo-dao.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Uyoahz26/daodao@main/dist/qexo-dao.min.js"></script>
   <!-- ... -->
 </head>
 <body>
@@ -19,7 +19,7 @@ updated: Mon, 13 Mar 2023 15:05:51 GMT
       name: "UyoAhz",
       limit: 10,
       useLoadingImg: false,
-      baseURL: "https://hexo-blog-cms.vercel.app/",
+      baseURL: "https://admin.mlou.xyz/",
     }).then(function (){
       console.log("qexoDaodao加载完成");
     })

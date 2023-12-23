@@ -1,5 +1,8 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+updated: {{ date }}
+abbrlink: {{ abbrlink }}
+categories: 
+tags: 
 ---

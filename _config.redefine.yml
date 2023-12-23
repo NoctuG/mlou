@@ -181,6 +181,9 @@ navbar:
     Friend Links:
       path: /links
       icon: fa-duotone fa-user-group
+    Talks:
+      path: /talks
+      icon: fa-solid fa-quote-left
     # About: 
     #   icon: fa-regular fa-user
     #   submenus:

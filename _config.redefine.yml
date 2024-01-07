@@ -178,10 +178,10 @@ navbar:
     Status: 
       path: https://servers.10789432.xyz
       icon: fa-regular fa-chart-bar
-    Friend Links:
+    友链:
       path: /links
       icon: fa-regular fa-user-group
-    Talks:
+    说说:
       path: /talks
       icon: fa-solid fa-quote-left
     # About: 

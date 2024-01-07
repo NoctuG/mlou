@@ -408,7 +408,7 @@ page_templates:
 # CDN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 cdn:
   # Whether to enable CDN
-  enable: true
+  enable: false
   # CDN Provider
   provider: staticfile # staticfile, bootcdn, cdnjs, jsdelivr, unpkg, custom
   # Custom CDN URL

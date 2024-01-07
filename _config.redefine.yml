@@ -180,7 +180,7 @@ navbar:
       icon: fa-regular fa-chart-bar
     Friend Links:
       path: /links
-      icon: fa-duotone fa-user-group
+      icon: fa-regular fa-user-group
     Talks:
       path: /talks
       icon: fa-solid fa-quote-left

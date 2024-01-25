@@ -3,12 +3,31 @@ abbrlink: 5236716e
 categories:
 - - 技术
 date: '2024-01-25T19:30:43.062380+08:00'
-excerpt: 这篇文章介绍了一个摘要生成工具的安装过程。文章中提供了安装所需的命令和文件链接，以及安装成功后的登录凭据和各种凭证。最后，文章列出了各个容器的状态信息。
+excerpt: 这篇文章介绍了使用Docker部署第三方镜像Kasm的方法。文章提供了使用命令行和使用镜像两种部署方式。在安装成功后，文章还提供了登录Kasm UI所需的用户名和密码，以及其他凭据信息。最后，文章列出了正在运行的容器状态。
 tags:
 - Docker
 title: Kasm部署
-updated: '2024-01-25T19:35:37.993+08:00'
+updated: '2024-01-25T20:03:16.069+08:00'
 ---
+使用第三方镜像：
+
+```docker
+docker run -d \
+  --name=kasm \
+  --privileged \
+  -e KASM_PORT=4443 \
+  -p 3000:3000 \
+  -p 4443:443 \
+  -v /opt/kasm:/opt \
+  --restart unless-stopped \
+  lscr.io/linuxserver/kasm:latest
+
+```
+
+
+
+命令行部署：
+
 ```bash
 cd /tmp
 curl -O https://kasm-static-content.s3.amazonaws.com/kasm_release_1.14.0.3a7abb.tar.gz

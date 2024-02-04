@@ -3,11 +3,11 @@ abbrlink: 5236716e
 categories:
 - - 技术
 date: '2024-01-25T19:30:43.062380+08:00'
-excerpt: 这篇文章介绍了使用Docker部署第三方镜像Kasm的方法。文章提供了使用命令行和使用镜像两种部署方式。在安装成功后，文章还提供了登录Kasm UI所需的用户名和密码，以及其他凭据信息。最后，文章列出了正在运行的容器状态。
+excerpt: 这篇文章介绍了使用第三方镜像和命令行部署的步骤来安装Kasm。安装成功后，还提供了Kasm UI的登录凭据、Kasm数据库的凭据、Kasm Redis的凭据、Kasm Manager Token、Kasm Guac Token和Service Registration Token。文章还列出了容器的状态。
 tags:
 - Docker
 title: Kasm部署
-updated: '2024-01-25T20:03:16.069+08:00'
+updated: '2024-02-04T22:10:25.520+08:00'
 ---
 使用第三方镜像：
 
@@ -23,8 +23,6 @@ docker run -d \
   lscr.io/linuxserver/kasm:latest
 
 ```
-
-
 
 命令行部署：
 

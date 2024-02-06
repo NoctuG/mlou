@@ -3,11 +3,11 @@ abbrlink: 5236716e
 categories:
 - - 技术
 date: '2024-01-25T19:30:43.062380+08:00'
-excerpt: 这篇文章介绍了Kasm，一个通过网络交付的应用程序流式传输平台。它能够安全地将浏览器、桌面和自定义应用程序传送到终端用户设备上。Kasm使用容器化的工作环境，用户可以通过网络浏览器访问，无需额外的客户端软件。它专为高安全性环境和需要远程用户安全访问应用程序或桌面的场景而设计。文章还提到了Kasm的资源配置要求和部署方法。最后，文章提供了安装成功的输出以及登录凭据和其他相关信息。
+excerpt: 这篇文章介绍了Kasm，一个通过网络交付的应用程序流式传输平台。它提供了一种创新的方式，通过网络浏览器将浏览器、桌面和自定义应用程序安全地传送到终端用户的设备上。Kasm Workspaces使用容器化的工作环境，可以通过网络浏览器访问，无需额外的客户端软件。该平台适用于高安全性环境和需要安全访问应用程序或桌面的远程用户。在安装和部署方面，需要安装Docker，并满足一定的资源配置要求。最后提供了Kasm的登录凭据和容器状态信息。
 tags:
 - Docker
 title: Kasm部署
-updated: '2024-02-06T19:26:22.211+08:00'
+updated: '2024-02-06T19:26:47.322+08:00'
 ---
 # Kasm 介绍
 
@@ -103,4 +103,3 @@ badba3ab8207   kasmweb/manager:1.14.0     "/bin/sh -c '/usr/bi…"   15 minutes 
 153ea8f0ce70   redis:5-alpine             "docker-entrypoint.s…"   15 minutes ago   Up 15 minutes             6379/tcp                                            kasm_redis
 b1cee51f0c6c   postgres:12-alpine         "docker-entrypoint.s…"   16 minutes ago   Up 15 minutes (healthy)   5432/tcp                                            kasm_db
 ```
-

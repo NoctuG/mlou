@@ -84,11 +84,43 @@ updated: '2024-02-09T20:44:28.958+08:00'
 4. 填入以下内容来自定义导航页面：
 
 ```javascript
-// 自定义网站配置 
 const config = {
-  title: "自定义导航",              //网站标题
-  subtitle: "Cloudflare Workers Nav", //网站副标题
-  //...其他配置...
+  title: "自定义导航",                 //自定义网站标题
+  subtitle: "Cloudflare Workers Nav", //自定义网站副标题
+  logo_icon: "sitemap",               //选择网站logo icon 暂时只支持 (eg:https://semantic-ui.com/elements/icon.html)
+  hitokoto: true,                     //开启 一言 插件
+  search:true,                        //开启 搜索 功能  
+  search_engine:[                     //搜索引擎列表
+    {
+      name:"百度一下",                   //搜索引擎名称
+      template:"https://www.baidu.com/s?wd=$s"  //搜索引擎模板（含关键词$s）
+    }
+  ],
+  selling_ads: true,                  //是否要开启网址推广
+  sell_info:{
+    domain:"example.com",             //当前域名
+    price:500,                        //价格
+    mon_unit:"yen sign",              //货币单位 (eg:https://semantic-ui.com/elements/icon.html#computers)
+    contact:[                         //联系方式
+      {
+        type:"envelope",              //通讯工具 ("weixin","qq","telegram plane","envelope" or "phone")
+        content:"info@example.com"    //号码/地址
+      }
+    ]                        
+  },
+  lists: [                            //网址信息
+    {
+      name:"技术",                    //网址类别
+      icon:"code",                    //网址类别icon 暂时只支持 (eg:https://semantic-ui.com/elements/icon.html)
+      list:[
+        {
+          url:"https://oschina.net/", //网站url
+          name:"开源中国",             //网站名称
+          desc:"领先的中文开源技术社区" //网站描述
+        }
+      ]
+    }
+  ]
 }
 
 //...其余必要的脚本和函数...

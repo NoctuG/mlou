@@ -3,11 +3,11 @@ abbrlink: fc0a813f
 categories:
 - - 技术
 date: '2024-02-09T20:26:07.131605+08:00'
-excerpt: 这篇文章介绍了一个基于cloudflare worker的电报私聊机器人，它集成了骗子提醒功能。文章详细介绍了搭建该机器人的方法，包括获取Token、生成Secret、获取用户ID、创建Cloudflare Worker、配置Worker变量、绑定KV数据库等步骤。文章还介绍了欺诈数据源管理和个人导航页的相关内容。个人导航页是在Cloudflare Worker平台上运行的程序，可以快速搭建一个导航页面，并提供接口帮助售出域名。
+excerpt: 这篇文章介绍了基于Cloudflare Worker的防欺诈Bot和CF-Worker-Dir导航页面的搭建方法。防欺诈Bot是一个电报私聊机器人，集成了骗子提醒功能，可以通过设置环境变量、绑定KV数据库等步骤来配置。CF-Worker-Dir是一个能在Cloudflare Worker平台上搭建导航页面的程序，可以快速创建个人导航页，方便售出域名。文章详细介绍了配置和部署的步骤。
 tags:
 - Cloudflare
 title: Cloudflare Worker 的用法总结
-updated: '2024-02-09T22:01:10.528+08:00'
+updated: '2024-02-09T22:21:17.234+08:00'
 ---
 # 防欺诈Bot
 
@@ -18,43 +18,43 @@ updated: '2024-02-09T22:01:10.528+08:00'
 ## 搭建方法
 
 1. **获取Token：**
-   
-   - 通过与Telegram的`@BotFather`对话获取bot的`token`。
-   - 使用`/setjoingroups`指令，限制bot不能被添加到群组中。
+
+   - 通过与Telegram的 `@BotFather`对话获取bot的 `token`。
+   - 使用 `/setjoingroups`指令，限制bot不能被添加到群组中。
 2. **生成Secret：**
-   
-   - 访问`uuidgenerator`网站获得一个随机的`uuid`，用作`secret`。
+
+   - 访问 `uuidgenerator`网站获得一个随机的 `uuid`，用作 `secret`。
 3. **获取用户ID：**
-   
-   - 使用`@username_to_id_bot`获取个人的用户id。
+
+   - 使用 `@username_to_id_bot`获取个人的用户id。
 4. **创建Cloudflare Worker：**
-   
+
    - 登录cloudflare账户，进入worker页面创建一个新的worker。
 5. **配置Worker变量：**
-   
-   - 在worker设置中添加环境变量`ENV_BOT_TOKEN`，值为步骤1中获取的`token`。
-   - 添加环境变量`ENV_BOT_SECRET`，值为步骤2中获得的`secret`。
-   - 添加环境变量`ENV_ADMIN_UID`，值为步骤3中获得的用户`id`。
+
+   - 在worker设置中添加环境变量 `ENV_BOT_TOKEN`，值为步骤1中获取的 `token`。
+   - 添加环境变量 `ENV_BOT_SECRET`，值为步骤2中获得的 `secret`。
+   - 添加环境变量 `ENV_ADMIN_UID`，值为步骤3中获得的用户 `id`。
 6. **绑定KV数据库：**
-   
-   - 创建一个命名空间为`nfd`的kv数据库。
-   - 在worker的变量设置中进行KV命名空间绑定，即设置`nfd -> nfd`。
+
+   - 创建一个命名空间为 `nfd`的kv数据库。
+   - 在worker的变量设置中进行KV命名空间绑定，即设置 `nfd -> nfd`。
 7. **编辑Worker：**
-   
+
    - 点击Quick Edit，将提供的代码复制到编辑器中。
 8. **注册Webhook：**
-   
+
    - 通过打开特定的https URL（示例：`https://xxx.workers.dev/registerWebhook`）来注册webhook。
 
 **使用方法：**
 
 - 当用户发送消息给bot时，这些消息会被转发给bot的创建者。
 - 当创建者回复普通文本给这些转发的消息时，回复会被发送给原始消息的发送者。
-- 如果回复包含`/block, /unblock, /checkblock`等指令，系统会执行相关命令，而不会将这些回复发送给原消息的发送者。
+- 如果回复包含 `/block, /unblock, /checkblock`等指令，系统会执行相关命令，而不会将这些回复发送给原消息的发送者。
 
 **欺诈数据源管理：**
 
-- `fraud.db`文件包含欺诈数据，其格式为每一行记录一个`uid`。
+- `fraud.db`文件包含欺诈数据，其格式为每一行记录一个 `uid`。
 - 可以通过pull request (pr) 方式增加数据，或者通过提交issue的方式请求添加数据。
 - 当提供额外欺诈信息时，需要附上信息来源。
 
@@ -106,7 +106,7 @@ const config = {
         type:"envelope",              //通讯工具 ("weixin","qq","telegram plane","envelope" or "phone")
         content:"info@example.com"    //号码/地址
       }
-    ]                        
+    ]                      
   },
   lists: [                            //网址信息
     {
@@ -126,3 +126,46 @@ const config = {
 //...其余必要的脚本和函数...
 ```
 
+
+# Workers-AI
+
+**项目介绍：**
+
+**workers-ai**
+这是一个利用 Cloudflare Workers 调用AI模型API的项目，以构建一个AI功能网站。
+
+**功能：**
+
+- 文本生成：使用 `@cf/meta/llama-2-7b-chat-int8`模型
+- 文本翻译：使用 `@cf/meta/m2m100-1.2b`模型
+- 图像分类：使用 `@cf/microsoft/resnet-50`模型
+- 文本生图：使用 `@cf/stabilityai/stable-diffusion-xl-base-1.0`模型
+
+**部署方法：**
+
+## 准备工作
+
+1. 登录 Cloudflare 并访问 [Cloudflare Dashboard](https://dash.cloudflare.com/)，地址栏中的 `xxxxxxxxx`代表你的 `{ACCOUNT_ID}`，请复制并保存。
+2. 访问 [API Tokens](https://dash.cloudflare.com/profile/api-tokens) 页面，依次点击 `Create Token` -> `Workers AI (Beta) Use template` -> `Continue to summary` -> `Create Token`。**请妥善保管生成的Token。**
+
+## 使用 Vercel 部署
+
+1. 点击 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai) 开始部署。
+2. 输入仓库名，如：Workers-AI，并点击 `Create`。稍等片刻，构建完成后点击 `Continue to Dashboard`。
+3. 选择 `Settings` -> `Environment Variables`，添加环境变量：
+   ```
+   REACT_APP_ACCOUNT_ID='abcdef'
+   REACT_APP_API_TOKEN='123456'
+   ```
+
+   用你自己的 `ACCOUNT_ID`和 `Token`替换上面的示例值。
+4. 在 `Deployments`页面点击 `Redeploy`重新部署。
+5. 部署完成后，项目即可使用。
+
+自定义域名配置：请自行研究设置方法。
+
+{% notel red 提醒 %}
+Vercel 对请求时长有10秒限制，而画图可能需要20-30秒，因此使用Vercel部署时文本转图功能不可用。
+解决方法：可以反代Cloudflare Workers AI的API，修改 `src/components/AxiosInstance.js`中的baseURL为反代地址后，再进行部署。
+
+{% endnotel %}

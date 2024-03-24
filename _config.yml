@@ -80,8 +80,6 @@ tag_map:
   Application: 应用
   Interface: 接口
   Docker: 容器
-  Linux
-  Termux
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta

@@ -5,7 +5,7 @@ categories:
 date: '2023-07-01T14:20:36.774966+08:00'
 excerpt: 介绍 BBR 是一种基于 TCP 的拥塞控制算法，由 Google 开发，旨在提高网络传输的速度和稳定性。BBR 可以有效地利用带宽，减少延迟，抵抗丢包，避免缓冲区膨胀等问题。BBR 已经被集成到 Linux 内核中，只需要简单的配置就可以启用。本文将介绍如何在 Linux VPS 上安装 BBR，并测试其效果。 前提条件  推荐使用 Ubuntu 或 Debian 系统。 需要至少 256M 空...
 tags:
-- 技术
+- 网络
 title: 如何在Linux VPS 上安装 BBR
 updated: 2023-7-1T14:33:56.754+8:0
 ---

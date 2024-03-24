@@ -1,7 +1,8 @@
 ---
 abbrlink: amd-update-trouble-slove
 categories:
-- Win
+- 技术
+- life
 date: '2022-08-08 22:11:23'
 excerpt: 在进行Windows系统升级后AMD报错，导致屏幕分辨率自动降低，其解决过程略微有些复杂，特此记录一下。 故障再现 解决过程 1 调整更新设置 在系统属性中找到硬件部分
   点击设备安装设置 选择 "否（你的设备可能无法像预期那样工作），然后点击保存更改 重装显卡驱动 卸载原有的驱动 找到设备管理器中的 AMD Radeon Vega

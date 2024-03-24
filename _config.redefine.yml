@@ -175,12 +175,6 @@ navbar:
     Archives: 
       path: /archives 
       icon: fa-regular fa-archive # can be empty
-    Categories:
-      path: /categories
-      icon: fa-regular fa-folder
-    Tags:
-      path: /tags
-      icon: fa-solid fa-tags
     Status: 
       path: https://servers.10789432.xyz
       icon: fa-regular fa-chart-bar
@@ -222,16 +216,12 @@ home:
     first_item: menu # First item in sidebar. menu, info
     announcement: # Announcement text
     links:
-      # Archives: 
-      #   path: /archives 
-      #   icon: fa-regular fa-archive # can be empty
-      # Tags: 
-      #   path: /tags 
-      #   icon: fa-regular fa-tags # can be empty
-      # Categories: 
-      #   path: /categories 
-      #   icon: fa-regular fa-folder # can be empty
-      # ...... # you can add more
+      标签: # 显示的名称
+        path: /tags # 路径
+        icon: fa-regular fa-tags # 图标，可以为空
+      分类: # 显示的名称
+        path: /categories # 路径
+        icon: fa-regular fa-folder # 图标，可以为空
   # Article date format
   article_date_format: auto # auto, relative, YYYY-MM-DD, YYYY-MM-DD HH:mm:ss etc.
   # Article categories visibility

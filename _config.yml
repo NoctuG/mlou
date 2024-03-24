@@ -67,19 +67,18 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
-  tech: 技术
-  life: 生活
-  other: 其他
-  VPS: 主机
-  economic: 经济
+  技术
+  生活
+  其他
+  VPS
 tag_map:
-  panel: 面板  # 例如，将英文标签"java"映射为中文"Java编程"
-  intelnet: 网络
-  bug: 故障
-  Cloudflare: CF白票
-  Application: 应用
-  Interface: 接口
-  Docker: 容器
+  面板  # 例如，将英文标签"java"映射为中文"Java编程"
+  网络
+  故障
+  Cloudflare
+  应用
+  接口
+  Docker
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta

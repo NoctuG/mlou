@@ -216,12 +216,15 @@ home:
     first_item: menu # First item in sidebar. menu, info
     announcement: # Announcement text
     links:
-      标签: # 显示的名称
-        path: /tags # 路径
-        icon: fa-regular fa-tags # 图标，可以为空
-      分类: # 显示的名称
-        path: /categories # 路径
-        icon: fa-regular fa-folder # 图标，可以为空
+      标签:
+        path: /tags 
+        icon: fa-regular fa-tags 
+      分类:
+        path: /categories 
+        icon: fa-regular fa-folder 
+      相册:
+        icon: fa-solid fa-image
+        path: /masonry/
   # Article date format
   article_date_format: auto # auto, relative, YYYY-MM-DD, YYYY-MM-DD HH:mm:ss etc.
   # Article categories visibility

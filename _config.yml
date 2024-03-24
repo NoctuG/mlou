@@ -72,7 +72,7 @@ category_map:
   其他
   VPS
 tag_map:
-  面板  # 例如，将英文标签"java"映射为中文"Java编程"
+  面板
   网络
   故障
   Cloudflare

@@ -3,11 +3,11 @@ abbrlink: fc0a813f
 categories:
 - - 技术
 date: '2024-02-09T20:26:07.131605+08:00'
-excerpt: 这篇文章介绍了基于Cloudflare Worker的防欺诈Bot和CF-Worker-Dir导航页面的搭建方法。防欺诈Bot是一个电报私聊机器人，集成了骗子提醒功能，可以通过设置环境变量、绑定KV数据库等步骤来配置。CF-Worker-Dir是一个能在Cloudflare Worker平台上搭建导航页面的程序，可以快速创建个人导航页，方便售出域名。文章详细介绍了配置和部署的步骤。
+excerpt: 这篇文章介绍了基于cloudflare worker的电报私聊机器人，该机器人具有防欺诈功能，能提醒用户注意骗子。文章提供了搭建该机器人的方法，以及如何获取必要的Token。
 tags:
 - Cloudflare
 title: Cloudflare Worker 的用法总结
-updated: '2024-02-09T22:21:17.234+08:00'
+updated: '2024-06-18T23:02:42.227+08:00'
 ---
 # 防欺诈Bot
 
@@ -106,7 +106,7 @@ const config = {
         type:"envelope",              //通讯工具 ("weixin","qq","telegram plane","envelope" or "phone")
         content:"info@example.com"    //号码/地址
       }
-    ]                      
+    ]                  
   },
   lists: [                            //网址信息
     {
@@ -125,7 +125,6 @@ const config = {
 
 //...其余必要的脚本和函数...
 ```
-
 
 # Workers-AI
 
@@ -153,6 +152,7 @@ const config = {
 1. 点击 [![Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/barkure/workers-ai) 开始部署。
 2. 输入仓库名，如：Workers-AI，并点击 `Create`。稍等片刻，构建完成后点击 `Continue to Dashboard`。
 3. 选择 `Settings` -> `Environment Variables`，添加环境变量：
+
    ```
    REACT_APP_ACCOUNT_ID='abcdef'
    REACT_APP_API_TOKEN='123456'
@@ -169,3 +169,484 @@ Vercel 对请求时长有10秒限制，而画图可能需要20-30秒，因此使
 解决方法：可以反代Cloudflare Workers AI的API，修改 `src/components/AxiosInstance.js`中的baseURL为反代地址后，再进行部署。
 
 {% endnotel %}
+
+# Github 加速
+
+```js
+
+const PREFIX = '/';
+const MAX_REDIRECTS = 10;
+
+const PREFLIGHT_INIT = {
+    status: 204,
+    headers: new Headers({
+        'access-control-allow-origin': '*',
+        'access-control-allow-methods': 'GET,POST,PUT,PATCH,TRACE,DELETE,HEAD,OPTIONS',
+        'access-control-max-age': '1728000',
+    }),
+};
+
+const GITHUB_PATTERNS = [
+    /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:releases|archive)\/.*$/i,
+    /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:blob|raw)\/.*$/i,
+    /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/(?:info|git-).*$/i,
+    /^(?:https?:\/\/)?raw\.(?:githubusercontent|github)\.com\/.+?\/.+?\/.+?\/.+$/i,
+    /^(?:https?:\/\/)?gist\.(?:githubusercontent|github)\.com\/.+?\/.+?\/.+$/i,
+    /^(?:https?:\/\/)?github\.com\/.+?\/.+?\/tags.*$/i
+];
+
+function checkUrl(url) {
+    return GITHUB_PATTERNS.some(pattern => pattern.test(url));
+}
+
+function makeRes(body, status = 200, headers = {}) {
+    headers['access-control-allow-origin'] = '*';
+    return new Response(body, {status, headers});
+}
+
+function newUrl(urlStr) {
+    try {
+        return new URL(urlStr);
+    } catch (err) {
+        console.error(`Invalid URL: ${urlStr}`, err);
+        return null;
+    }
+}
+
+addEventListener('fetch', e => {
+    const ret = fetchHandler(e)
+        .catch(err => makeRes('cfworker error:\n' + err.stack, 502));
+    e.respondWith(ret);
+});
+
+async function fetchHandler(e, redirectCount = 0) {
+    if (redirectCount > MAX_REDIRECTS) {
+        return makeRes('Too many redirects', 502);
+    }
+
+    const req = e.request;
+    const urlStr = req.url;
+    const urlObj = new URL(urlStr);
+    let path = urlObj.searchParams.get('q');
+
+    path = urlObj.href.substr(urlObj.origin.length + PREFIX.length).replace(/^https?:\/+/, 'https://');
+  
+    if (checkUrl(path)) {
+        if (path.search(GITHUB_PATTERNS[1]) === 0) {
+            path = path.replace('/blob/', '/raw/');
+        }
+        return httpHandler(req, path);
+    }
+
+    return new Response('404 Not Found', {status: 404});
+}
+
+function httpHandler(req, pathname) {
+    const reqHdrRaw = req.headers;
+
+    if (req.method === 'OPTIONS' && reqHdrRaw.has('access-control-request-headers')) {
+        return new Response(null, PREFLIGHT_INIT);
+    }
+
+    const reqHdrNew = new Headers(reqHdrRaw);
+
+    if (pathname.search(/^https?:\/\//) !== 0) {
+        pathname = 'https://' + pathname;
+    }
+    const urlObj = newUrl(pathname);
+
+    const reqInit = {
+        method: req.method,
+        headers: reqHdrNew,
+        redirect: 'manual',
+        body: req.body
+    };
+    return proxy(urlObj, reqInit);
+}
+
+async function proxy(urlObj, reqInit, redirectCount = 0) {
+    if (redirectCount > MAX_REDIRECTS) {
+        return makeRes('Too many redirects', 502);
+    }
+
+    const res = await fetch(urlObj.href, reqInit);
+    const resHdrOld = res.headers;
+    const resHdrNew = new Headers(resHdrOld);
+
+    if (resHdrNew.has('location')) {
+        const location = resHdrNew.get('location');
+        if (checkUrl(location)) {
+            resHdrNew.set('location', PREFIX + location);
+        } else {
+            reqInit.redirect = 'follow';
+            return proxy(newUrl(location), reqInit, redirectCount + 1);
+        }
+    }
+
+    resHdrNew.set('access-control-expose-headers', '*');
+    resHdrNew.set('access-control-allow-origin', '*');
+    resHdrNew.delete('content-security-policy');
+    resHdrNew.delete('content-security-policy-report-only');
+    resHdrNew.delete('clear-site-data');
+
+    return new Response(res.body, {
+        status: res.status,
+        headers: resHdrNew,
+    });
+}
+```
+
+
+
+### 基于[V2EX 用 cloudflare worker 搭建一个 Docker 镜像](https://www.nodeseek.com/jump?to=https%3A%2F%2Fv2ex.com%2Ft%2F1007922)
+
+> 优化了一点点...
+
+* 删除了返回头中的`Docker-Distribution-Api-VersionDocker-Distribution-Api-Version`特征,避免空间测绘引擎扫描到
+* `404`状态时,返回空字符,进一步避免特征扫描
+
+### 使用方法:
+
+* 直接修改全局镜像地址: 修改或创建`/etc/docker/daemon.json`写入以下内容
+
+  ```json
+  {
+  	"registry-mirrors": [ "https://自定义域名" ]
+  }
+  ```
+
+  ![使用方法](https://openai-75050.gzc.vod.tencent-cloud.com/openaiassets_b70c097737e579533b8ce10ce08cc291_2579861718099507192.png)
+* 手动拉取单个镜像
+
+  ```bash
+  docker pull 域名/ubuntu
+  ```
+* 搭建时,将`自定义子域名`修改为Workers设置中的自定义域名
+* **必须添加自定义域名,默认的workers.dev在国内无法使用**
+
+---
+
+以下为Workers源代码
+
+```js
+'use strict'
+
+const hub_host = 'registry-1.docker.io'
+const auth_url = 'https://auth.docker.io'
+const workers_url = 'https://自定义域名'
+/**
+* static files (404.html, sw.js, conf.js)
+*/
+
+/** @type {RequestInit} */
+const PREFLIGHT_INIT = {
+  // status: 204,
+  headers: new Headers({
+    'access-control-allow-origin': '*',
+    'access-control-allow-methods': 'GET,POST,PUT,PATCH,TRACE,DELETE,HEAD,OPTIONS',
+    'access-control-max-age': '1728000',
+  }),
+}
+
+/**
+* @param {any} body
+* @param {number} status
+* @param {Object<string, string>} headers
+*/
+function makeRes(body, status = 200, headers = {}) {
+  headers['access-control-allow-origin'] = '*'
+  return new Response(body, { status, headers })
+}
+
+
+/**
+* @param {string} urlStr
+*/
+function newUrl(urlStr) {
+  try {
+    return new URL(urlStr)
+  } catch (err) {
+    return null
+  }
+}
+
+
+addEventListener('fetch', e => {
+  const ret = fetchHandler(e)
+    .catch(err => makeRes('error: ' + err.stack + "\n", 502))
+  e.respondWith(ret)
+})
+
+
+/**
+* @param {FetchEvent} e
+*/
+async function fetchHandler(e) {
+  const getReqHeader = (key) => e.request.headers.get(key);
+
+  let url = new URL(e.request.url);
+
+  // 修改 pre head get 请求
+  // 是否含有 %2F ，用于判断是否具有用户名与仓库名之间的连接符
+  // 同时检查 %3A 的存在
+  if (!/%2F/.test(url.search) && /%3A/.test(url.toString())) {
+    let modifiedUrl = url.toString().replace(/%3A(?=.*?&)/, '%3Alibrary%2F');
+    url = new URL(modifiedUrl);
+    console.log(`handle_url: ${url}`)
+  }
+
+  if (url.pathname === '/token') {
+    let token_parameter = {
+      headers: {
+        'Host': 'auth.docker.io',
+        'User-Agent': getReqHeader("User-Agent"),
+        'Accept': getReqHeader("Accept"),
+        'Accept-Language': getReqHeader("Accept-Language"),
+        'Accept-Encoding': getReqHeader("Accept-Encoding"),
+        'Connection': 'keep-alive',
+        'Cache-Control': 'max-age=0'
+      }
+    };
+    let token_url = auth_url + url.pathname + url.search
+    return fetch(new Request(token_url, e.request), token_parameter)
+  }
+
+  // 修改 head 请求
+  if (/^\/v2\/[^/]+\/[^/]+\/[^/]+$/.test(url.pathname) && !/^\/v2\/library/.test(url.pathname)) {
+    url.pathname = url.pathname.replace(/\/v2\//, '/v2/library/');
+    console.log(`modified_url: ${url.pathname}`)
+  }
+
+  url.hostname = hub_host;
+
+  let parameter = {
+    headers: {
+      'Host': hub_host,
+      'User-Agent': getReqHeader("User-Agent"),
+      'Accept': getReqHeader("Accept"),
+      'Accept-Language': getReqHeader("Accept-Language"),
+      'Accept-Encoding': getReqHeader("Accept-Encoding"),
+      'Connection': 'keep-alive',
+      'Cache-Control': 'max-age=0'
+    },
+    cacheTtl: 3600
+  };
+
+  if (e.request.headers.has("Authorization")) {
+    parameter.headers.Authorization = getReqHeader("Authorization");
+  }
+
+  let original_response = await fetch(new Request(url, e.request), parameter)
+  let original_response_clone = original_response.clone();
+  let original_text = original_response_clone.body;
+  let response_headers = original_response.headers;
+  let new_response_headers = new Headers(response_headers);
+  let status = original_response.status;
+
+  if (new_response_headers.get("Www-Authenticate")) {
+    let auth = new_response_headers.get("Www-Authenticate");
+    let re = new RegExp(auth_url, 'g');
+    new_response_headers.set("Www-Authenticate", response_headers.get("Www-Authenticate").replace(re, workers_url));
+  }
+  if (new_response_headers.get("Docker-Distribution-Api-Version")){
+    new_response_headers.delete("Docker-Distribution-Api-Version");
+  }
+
+  if (new_response_headers.get("Location")) {
+    return httpHandler(e.request, new_response_headers.get("Location"))
+  }
+  if (status === 404){
+    original_text = "";
+  }
+  let response = new Response(original_text, {
+    status,
+    headers: new_response_headers
+  })
+  return response;
+
+}
+
+
+/**
+* @param {Request} req
+* @param {string} pathname
+*/
+function httpHandler(req, pathname) {
+  const reqHdrRaw = req.headers
+
+  // preflight
+  if (req.method === 'OPTIONS' &&
+    reqHdrRaw.has('access-control-request-headers')
+  ) {
+    return new Response(null, PREFLIGHT_INIT)
+  }
+
+  let rawLen = ''
+
+  const reqHdrNew = new Headers(reqHdrRaw)
+
+  const refer = reqHdrNew.get('referer')
+
+  let urlStr = pathname
+
+  const urlObj = newUrl(urlStr)
+
+  /** @type {RequestInit} */
+  const reqInit = {
+    method: req.method,
+    headers: reqHdrNew,
+    redirect: 'follow',
+    body: req.body
+  }
+  return proxy(urlObj, reqInit, rawLen)
+}
+
+
+/**
+*
+* @param {URL} urlObj
+* @param {RequestInit} reqInit
+*/
+async function proxy(urlObj, reqInit, rawLen) {
+  const res = await fetch(urlObj.href, reqInit)
+  const resHdrOld = res.headers
+  const resHdrNew = new Headers(resHdrOld)
+
+  // verify
+  if (rawLen) {
+    const newLen = resHdrOld.get('content-length') || ''
+    const badLen = (rawLen !== newLen)
+
+    if (badLen) {
+      return makeRes(res.body, 400, {
+        '--error': `bad len: ${newLen}, except: ${rawLen}`,
+        'access-control-expose-headers': '--error',
+      })
+    }
+  }
+  const status = res.status
+  resHdrNew.set('access-control-expose-headers', '*')
+  resHdrNew.set('access-control-allow-origin', '*')
+  resHdrNew.set('Cache-Control', 'max-age=1500')
+
+  resHdrNew.delete('content-security-policy')
+  resHdrNew.delete('content-security-policy-report-only')
+  resHdrNew.delete('clear-site-data')
+
+  return new Response(res.body, {
+    status,
+    headers: resHdrNew
+  })
+}
+```
+
+
+## 使用 Cloudreve + E5 + Workers 搭建免费高速云盘 | 跑满带宽
+
+本文由 `High Ping Network` 的小伙伴 GenshinMinecraft 进行编撰，首发于 [本博客](https://www.nodeseek.com/jump?to=https%3A%2F%2Fblog.highp.ing)
+
+### 前言
+
+Cloudreve 也不是什么新玩意了，就不过多介绍了
+
+本文主要讲述的是有关于 **Cloudflare Workers 代理 E5 下载链接**的部分，其他应该会一笔带过，除非有特别需要注意的地方
+
+你只需要:
+
+* 用于搭建 Cloudreve 的机器
+* 一个域名
+* 一个用于优选的 Cname 域名
+* 一个 Cloudflare 帐号
+* 一个用作网盘的 Microsoft 365 E5 帐号 (当然有 Onedrive 权限的任意账号也可以)
+
+请注意: 用于 Workers 的优选 IP 不能为反代 IP，只能为 Cloudflare 官方 IP 列表中的 IP
+
+### 搭建 Cloudreve 并连接网盘
+
+这一步跟着[官方教程](https://www.nodeseek.com/jump?to=https%3A%2F%2Fdocs.cloudreve.org%2Fgetting-started%2Finstall)来就行了，无需多言
+
+相信能阅读到本篇文章的朋友也不至于不会搭建
+
+记住这里，留意下，这里填写的就是等会使用的 Workers 的域名
+
+![IMG_20240527_214124_048.jpg](https://blogcdn.blog.highp.ing/p/cloudreve/IMG_20240527_214124_048.jpg)
+
+目前可以先不管
+
+### 中转 E5 下载地址
+
+我们默认的 E5 下载地址直连还是比较慢的，中国移动 1000M 宽带速度高达 500kb/s
+
+![](https://blogcdn.blog.highp.ing/p/cloudreve/IMG_20240527_214837_392.jpg)
+
+#### 获取 E5 下载地址
+
+一般地，E5 的通用下载地址域名为 `xxxx-my.sharepoint.com`
+
+其中 `xxxx` 为 E5 的组织名字，也就是 `xxxx.onmicrosoft.com` 的二级，替换即可
+
+比如我的域名为 `genmine5.onmicrosoft.com`，对应的下载域名为 `genmine5-my.sharepoint.com`
+
+将其记住并保存下来
+
+#### 反代 E5 下载地址
+
+来到 Cloudflare Dashboard，`Workers And Pages`，新建一个 Workers
+
+将代码改为:
+
+```js
+export default {
+	async fetch(request, env, ctx) {
+		let url = new URL(request.url);
+		if(url.pathname.startsWith('/')){
+			url.hostname="genmine5-my.sharepoint.com"; // 修改成自己的域名
+			let new_request = new Request(url, request)
+			return await fetch(new_request)
+		}
+		return await env.ASSETS.fetch(request);
+	},
+};
+```
+
+记得修改其中的反代域名，保存部署即可
+
+#### 连接域名
+
+回到 Cloudflare Dashboard 主界面，点进一个域名，找到 `Workers 路由`，新增一个类似于下图的路由:
+
+![](https://blogcdn.blog.highp.ing/p/cloudreve/IMG_20240527_221036_568.jpg)
+
+PS: *不建议使用顶级域名，建议二级，顶级域名有 Cname 拉平*
+
+还有一个注意的点，后面的 `/*` 千万不要忘记
+
+#### 解析域名
+
+回到 DNS 解析，将刚才设置的域名 Cname 到一个 `Cloudflare 官方 IP 优选地址`上
+
+注意一定要 **官方 IP**，反代 IP 没用的！
+
+解析就不多说了，简单得很
+
+#### 测试访问
+
+现在，访问你的反代地址，当跳转到 Onedrive 登陆界面即为完成:
+
+![](https://blogcdn.blog.highp.ing/p/cloudreve/IMG_20240528_125235_035.jpg)
+
+### 编辑反代 IP
+
+![IMG_20240527_214124_048.jpg](https://blogcdn.blog.highp.ing/p/cloudreve/IMG_20240527_214124_048.jpg)
+
+还记得这里吗，将其改为反代的地址即可，以后所有的下载请求都会走反代了
+
+PS: 上传不走，也不太可能走，Cloudflare 上传最大 100MB
+
+### 测试
+
+![](https://blogcdn.blog.highp.ing/p/cloudreve/IMG_20240528_125814_900.jpg)
+
+前后提升巨大，优选前下载速度 500KB/s，优选后下载速度 80MB/s+
+
+也算是把 E5 优化到极致了

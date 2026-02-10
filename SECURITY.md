@@ -2,20 +2,41 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+This repository tracks a single live branch. Security fixes are applied on `main` and shipped through regular dependency updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Branch | Supported |
+| --- | --- |
+| `main` | ✅ |
+
+## Dependency Security Baseline
+
+- Runtime dependencies in `package.json` are pinned to exact versions to reduce surprise upgrades.
+- High-risk Hexo ecosystem packages are explicitly monitored first: `hexo-server`, renderers (`hexo-renderer-*`), and theme packages (currently `hexo-theme-redefine`).
+- CI enforces production dependency audit checks with a **high** severity failure threshold (`npm audit --omit=dev --audit-level=high`).
+
+## Upgrade Cadence
+
+To avoid large, risky batch upgrades:
+
+1. **Monthly light update window**
+   - Run high-risk package checks (`npm run deps:check:risk`).
+   - Apply patch/minor updates where safe.
+   - Run smoke regression (`npm run clean && npm run build`).
+
+2. **Quarterly deep update window**
+   - Review all runtime dependencies.
+   - Revalidate lockfile and audit posture.
+   - Perform broader regression checks on generated site output.
+
+The GitHub Actions workflow `.github/workflows/dependency-security.yml` schedules both monthly and quarterly runs.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a vulnerability, please open a private security report through your Git hosting platform (or contact the maintainer directly if private reporting is unavailable) with:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- affected dependency/package and version
+- impact assessment (what can be exploited)
+- proof of concept or reproduction steps
+- suggested mitigation or upgrade path
+
+Acknowledgement target: within 3 business days.

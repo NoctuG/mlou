@@ -3,7 +3,7 @@ abbrlink: docker-nextcloud
 categories:
 - - 程序
 date: '2023-08-07T14:24:38.400558+08:00'
-excerpt: 新建目录 mkdir opt/nxd  准备 docker-compose.yml version: '3'  services:   db:     image: mariadb     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW     restart: always     volumes:     ...
+excerpt: 使用 Docker Compose 部署 Nextcloud，并记录初始化、数据库与 Redis 配置等关键步骤。
 tags:
 - VPS
 title: Docker安装Nextcloud
@@ -23,7 +23,7 @@ mkdir opt/nxd
 
 ## 准备 `docker-compose.yml`
 
-接下来，我们需要编写一个docker-compose.yml文件，用来定义Nextcloud的服务和容器。这里我们使用了三个服务：db，redis和app。db服务使用了mariadb镜像，用来提供数据库支持。redis服务使用了redis镜像，用来提供缓存功能。app服务使用了nextcloud镜像，用来运行Nextcloud的应用程序。我们还使用了一些环境变量和卷，用来配置数据库的密码、用户、名称等，以及挂载数据目录到容器中。我们还指定了app服务的端口为8080，这意味着我们可以通过http://localhost:8080来访问Nextcloud。如果您想使用其他端口，可以修改这个参数。
+接下来，我们需要编写一个docker-compose.yml文件，用来定义Nextcloud的服务和容器。这里我们使用了三个服务：db，redis和app。db服务使用了mariadb镜像，用来提供数据库支持。redis服务使用了redis镜像，用来提供缓存功能。app服务使用了nextcloud镜像，用来运行Nextcloud的应用程序。我们还使用了一些环境变量和卷，用来配置数据库的密码、用户、名称等，以及挂载数据目录到容器中。我们还指定了 app 服务的端口为 8080，这意味着可以通过 `http://localhost:8080` 访问 Nextcloud；如果您想使用其他端口，可以修改这个参数。
 
 ```yaml
 version: '3'
@@ -100,6 +100,6 @@ root@linux:/opt/nxd# docker-compose up -d
    ✔ a6e91c7dec0d Pull complete
 ```
 
-这表示Nextcloud已经成功部署了。我们可以在浏览器中输入http://localhost:8080来访问Nextcloud的界面，
+这表示 Nextcloud 已经成功部署了。我们可以在浏览器中输入 `http://localhost:8080` 来访问 Nextcloud 的界面，
 
 此时Nextcloud需要我们输入一个管理员账号和密码，以及数据库的相关信息，来完成安装和配置的过程。我们可以根据自己的喜好选择一个管理员账号和密码，但是数据库的信息必须与docker-compose.yml文件中的环境变量相一致，否则会出现连接错误。

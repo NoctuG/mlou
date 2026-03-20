@@ -73,8 +73,11 @@ global:
     post_pv: false # post page view
   # Whether to enable single page experience (using swup). See https://swup.js.org/. similar to pjax
   single_page: true
-  # Whether to enable open graph
-  open_graph: true
+  # Open Graph metadata
+  open_graph:
+    enable: true
+    image: /images/redefine-og.webp
+    description: Mlou 的技术与生活记录。
   # Google Analytics
   google_analytics:
     enable: false # Whether to enable Google Analytics

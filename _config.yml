@@ -109,6 +109,11 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: redefine
 all_minifier: true
+css_minifier:
+  exclude:
+    - tailwind.source.css
+    - category-list.styl
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

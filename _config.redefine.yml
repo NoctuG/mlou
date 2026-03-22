@@ -360,10 +360,10 @@ footer:
 # INJECT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 inject:
   # Whether to enable inject
-  enable: false
+  enable: true
   # Inject custom head html code
   head: 
-    -
+    - <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://admin.mlou.xyz; img-src 'self' data: https:; font-src 'self' data: https://cdn.jsdelivr.net;">
     -
   # Inject custom footer html code
   footer:

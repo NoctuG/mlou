@@ -1,0 +1,45 @@
+#qexot {
+  margin-top: 1rem;
+}
+
+.qexo-talk-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.qexo-talk-item {
+  border: 1px solid rgba(125, 125, 125, 0.25);
+  border-radius: 10px;
+  padding: 0.9rem;
+}
+
+.qexo-talk-content {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.qexo-talk-images {
+  margin-top: 0.7rem;
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.qexo-talk-images img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.qexo-talk-time {
+  margin-top: 0.7rem;
+  display: inline-block;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.qexo-loading,
+.qexo-empty {
+  opacity: 0.8;
+}
